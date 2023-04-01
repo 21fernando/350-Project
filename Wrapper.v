@@ -24,8 +24,12 @@
  *
  **/
 
-module Wrapper (clock, reset);
-	input clock, reset;
+module Wrapper (CLK100MHZ, BTNC, LED);
+	input CLK100MHZ, BTNC;
+	assign clock = CLK100MHZ;
+	assign reset = BTNC;
+	
+	output [15:0] LED;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -35,7 +39,7 @@ module Wrapper (clock, reset);
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "";
+	localparam INSTR_FILE = "arithmetic";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -53,6 +57,7 @@ module Wrapper (clock, reset);
 		.data(memDataIn), .q_dmem(memDataOut)); 
 	
 	// Instruction Memory (ROM)
+	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({INSTR_FILE, ".mem"}))
 	InstMem(.clk(clock), 
 		.addr(instAddr[11:0]), 
@@ -63,8 +68,9 @@ module Wrapper (clock, reset);
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
-		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));
-						
+		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
+		.LED(LED));
+								
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 
 		.wEn(mwe), 

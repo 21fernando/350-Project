@@ -2,7 +2,7 @@ module regfile (
 	clock,
 	ctrl_writeEnable, ctrl_reset, ctrl_writeReg,
 	ctrl_readRegA, ctrl_readRegB, data_writeReg,
-	data_readRegA, data_readRegB
+	data_readRegA, data_readRegB, LED
 );
 
 	input clock, ctrl_writeEnable, ctrl_reset;
@@ -10,6 +10,7 @@ module regfile (
 	input [31:0] data_writeReg;
 
 	output [31:0] data_readRegA, data_readRegB;
+	output [15:0] LED;
 
 	wire [31:0] reg_out [31:0];
 	wire [31:0] reg_en;
@@ -28,6 +29,7 @@ module regfile (
 			reg_32 r(.q(reg_out[c]), .d(data_writeReg), .clk(clock), .en(reg_en[c]), .clr(ctrl_reset));
 		end
 	endgenerate
+	assign LED = reg_out[2][15:0];
 
 	//===============
 	// Register Write

@@ -39,8 +39,8 @@ module processor(
     ctrl_readRegB,                  // O: Register to read from port B of RegFile
     data_writeReg,                  // O: Data to write to for RegFile
     data_readRegA,                  // I: Data from port A of RegFile
-    data_readRegB                   // I: Data from port B of RegFile
-	 
+    data_readRegB,                   // I: Data from port B of RegFile
+	
 	);
 
 	// Control signals
@@ -60,7 +60,7 @@ module processor(
 	output [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
 	output [31:0] data_writeReg;
 	input [31:0] data_readRegA, data_readRegB;
-
+	
     //Stall wire
     wire stall, MD_stall, bypassing_stall;
 
