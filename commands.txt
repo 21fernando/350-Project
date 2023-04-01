@@ -1,0 +1,3 @@
+./assembler/asm Test\ Files/Assembly\ Files/
+iverilog -o proc -c processor_files.txt -s Wrapper_tb -P Wrapper_tb.FILE=\"\"
+vvp proc
