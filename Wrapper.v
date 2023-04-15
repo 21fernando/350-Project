@@ -70,12 +70,42 @@ module Wrapper (CLK100MHZ, BTNC, LED);
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
 		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
 		.LED(LED));
-								
+
+	wire [4:0] IO_wEn;
+	wire [31:0] IO_input_1, IO_input_2, IO_input_3, IO_input_4, IO_input_5, IO_output_1, IO_output_2, IO_output_3, IO_output_4, IO_output_5;								
+	
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 
 		.wEn(mwe), 
 		.addr(memAddr[11:0]), 
 		.dataIn(memDataIn), 
-		.dataOut(memDataOut));
+		.IO_wEn(IO_wEn),
+		.IO_input_1(IO_input_1),
+		.IO_input_2(IO_input_2),
+		.IO_input_3(IO_input_3),
+		.IO_input_4(IO_input_4),
+		.IO_input_5(IO_input_5),
+		.dataOut(memDataOut),
+		.IO_output_1(IO_output_1),
+		.IO_output_2(IO_output_2),
+		.IO_output_3(IO_output_3),
+		.IO_output_4(IO_output_4),
+		.IO_output_5(IO_output_5)
+	);
+
+	IO io(
+		.clk(clock),
+		.IO_input_1(IO_output_1),
+		.IO_input_2(IO_output_2),
+		.IO_input_3(IO_output_3),
+		.IO_input_4(IO_output_4),
+		.IO_input_5(IO_output_5),
+		.IO_output_1(IO_input_1),
+		.IO_output_2(IO_input_2),
+		.IO_output_3(IO_input_3),
+		.IO_output_4(IO_input_4),
+		.IO_output_5(IO_input_5),
+		.IO_wEn(IO_wEn)
+	);
 
 endmodule
