@@ -1,0 +1,48 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../And_32.v" \
+"../../../../../CLA_16.v" \
+"../../../../../CLA_32.v" \
+"../../../../../CLA_8.v" \
+"../../../../../IO.v" \
+"../../../../../LeftShift.v" \
+"../../../../../Or_32.v" \
+"../../../../../RAM.v" \
+"../../../../../ROM.v" \
+"../../../../../RightShift.v" \
+"../../../../../Wrapper.v" \
+"../../../../../alu.v" \
+"../../../../../counter_32.v" \
+"../../../../../decoder_32.v" \
+"../../../../../dffe_ref.v" \
+"../../../../../dffe_ref_falling.v" \
+"../../../../../divider.v" \
+"../../../../../dx_latch.v" \
+"../../../../../fd_latch.v" \
+"../../../../../multdiv.v" \
+"../../../../../multiplier.v" \
+"../../../../../mux_2.v" \
+"../../../../../mux_2_1.v" \
+"../../../../../mux_32.v" \
+"../../../../../mux_4.v" \
+"../../../../../mux_8.v" \
+"../../../../../mw_latch.v" \
+"../../../../../pc_latch.v" \
+"../../../../../processor.v" \
+"../../../../../pw_latch.v" \
+"../../../../../reg_32.v" \
+"../../../../../reg_64.v" \
+"../../../../../reg_65.v" \
+"../../../../../regfile.v" \
+"../../../../../stepper.v" \
+"../../../../../tffe_ref.v" \
+"../../../../../tristate.v" \
+"../../../../../twos_complement.v" \
+"../../../../../xm_latch.v" \
+"../../../../350-Project.srcs/sim_1/new/sim.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -24,12 +24,18 @@
  *
  **/
 
-module Wrapper (CLK100MHZ, BTNC, LED);
-	input CLK100MHZ, BTNC;
+module Wrapper (
+    input CLK100MHZ, 
+    input BTNC,
+    output JA_1, 
+    output JA_2,
+    output JA_7,
+    output JA_8,
+    output JA_9,
+    output JA_10);
+    
 	assign clock = CLK100MHZ;
 	assign reset = BTNC;
-	
-	output [15:0] LED;
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -39,7 +45,7 @@ module Wrapper (CLK100MHZ, BTNC, LED);
 
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "arithmetic";
+	localparam INSTR_FILE = "stepper";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -68,44 +74,38 @@ module Wrapper (CLK100MHZ, BTNC, LED);
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
-		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
-		.LED(LED));
+		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));
 
-	wire [4:0] IO_wEn;
-	wire [31:0] IO_input_1, IO_input_2, IO_input_3, IO_input_4, IO_input_5, IO_output_1, IO_output_2, IO_output_3, IO_output_4, IO_output_5;								
+	wire IO_wEn;
+	wire [31:0] IO_dataIn, IO_dataOut;
+	wire [11:0] IO_addr;								
 	
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 
-		.wEn(mwe), 
-		.addr(memAddr[11:0]), 
-		.dataIn(memDataIn), 
-		.IO_wEn(IO_wEn),
-		.IO_input_1(IO_input_1),
-		.IO_input_2(IO_input_2),
-		.IO_input_3(IO_input_3),
-		.IO_input_4(IO_input_4),
-		.IO_input_5(IO_input_5),
+		.wEn(mwe),
+		.IO_wEn(IO_wEn), 
+		.addr(memAddr[11:0]),
+		.IO_addr(IO_addr), 
+		.dataIn(memDataIn),
+		.IO_dataIn(IO_dataIn),
 		.dataOut(memDataOut),
-		.IO_output_1(IO_output_1),
-		.IO_output_2(IO_output_2),
-		.IO_output_3(IO_output_3),
-		.IO_output_4(IO_output_4),
-		.IO_output_5(IO_output_5)
+		.IO_dataOut(IO_dataOut)
 	);
-
+    wire [5:0] JA;
+    assign JA_1 = JA[0];
+    assign JA_2 = JA[1];
+    assign JA_7 = JA[2];
+    assign JA_8 = JA[3];
+    assign JA_9 = JA[4];
+    assign JA_10 = JA[5];
+    
 	IO io(
-		.clk(clock),
-		.IO_input_1(IO_output_1),
-		.IO_input_2(IO_output_2),
-		.IO_input_3(IO_output_3),
-		.IO_input_4(IO_output_4),
-		.IO_input_5(IO_output_5),
-		.IO_output_1(IO_input_1),
-		.IO_output_2(IO_input_2),
-		.IO_output_3(IO_input_3),
-		.IO_output_4(IO_input_4),
-		.IO_output_5(IO_input_5),
-		.IO_wEn(IO_wEn)
-	);
+        .clk(clock),
+        .IO_dataIn(IO_dataOut),
+        .IO_dataOut(IO_dataIn),
+        .IO_addr(IO_addr),
+        .IO_wEn(IO_wEn),
+        .JA(JA)
+    );
 
 endmodule

@@ -15,20 +15,14 @@
 module RAM #( parameter DATA_WIDTH = 32, ADDRESS_WIDTH = 12, DEPTH = 4096) (
     input wire                     clk,
     input wire                     wEn,
+    input wire                     IO_wEn,
     input wire [ADDRESS_WIDTH-1:0] addr,
-    input wire [4:0]               IO_wEn,
-    input wire [DATA_WIDTH-1:0]    IO_input_1,
-    input wire [DATA_WIDTH-1:0]    IO_input_2,
-    input wire [DATA_WIDTH-1:0]    IO_input_3,
-    input wire [DATA_WIDTH-1:0]    IO_input_4,
-    input wire [DATA_WIDTH-1:0]    IO_input_5,
+    input wire [ADDRESS_WIDTH-1:0] IO_addr,
     input wire [DATA_WIDTH-1:0]    dataIn,
-    output reg [DATA_WIDTH-1:0]    dataOut = 0, 
-    output reg [DATA_WIDTH-1:0]    IO_output_1 = 0,
-    output reg [DATA_WIDTH-1:0]    IO_output_2 = 0,
-    output reg [DATA_WIDTH-1:0]    IO_output_3 = 0,
-    output reg [DATA_WIDTH-1:0]    IO_output_4 = 0,
-    output reg [DATA_WIDTH-1:0]    IO_output_5 = 0);
+    input wire [DATA_WIDTH-1:0]    IO_dataIn,
+    output reg [DATA_WIDTH-1:0]    dataOut = 0,
+    output reg [DATA_WIDTH-1:0]    IO_dataOut = 0
+    );
     
     reg[DATA_WIDTH-1:0] MemoryArray[0:DEPTH-1];
     
@@ -50,32 +44,13 @@ module RAM #( parameter DATA_WIDTH = 32, ADDRESS_WIDTH = 12, DEPTH = 4096) (
             dataOut <= MemoryArray[addr];
         end
     end
-
-    //IO read ports for devices
+    
+    //IO memory accesses
     always @(posedge clk) begin
-        IO_output_1 <= MemoryArray[4091];
-        IO_output_2 <= MemoryArray[4092];
-        IO_output_3 <= MemoryArray[4093];
-        IO_output_4 <= MemoryArray[4094];
-        IO_output_5 <= MemoryArray[4095];
-    end
-
-    //IO write ports for devices
-    always @(posedge clk) begin
-        if(IO_wEn[0]) begin
-            MemoryArray[4086] <= IO_input_1;
-        end
-        if(IO_wEn[1]) begin
-            MemoryArray[4087] <= IO_input_2;
-        end
-        if(IO_wEn[2]) begin
-            MemoryArray[4088] <= IO_input_3;
-        end
-        if(IO_wEn[3]) begin
-            MemoryArray[4089] <= IO_input_4;
-        end
-        if(IO_wEn[4]) begin
-            MemoryArray[4090] <= IO_input_5;
+        if(IO_wEn) begin
+            MemoryArray[IO_addr] <= IO_dataIn;
+        end else begin
+            IO_dataOut <= MemoryArray[IO_addr];
         end
     end
 endmodule

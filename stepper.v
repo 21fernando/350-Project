@@ -1,14 +1,10 @@
 `timescale 1ns / 1ps
 module Stepper(
     input CLK100MHZ,
-    input [31:0]
-    output JA_1,
-    output JA_2,
-    output JA_7,
-    output JA_8,
-    output JA_9,
-    output JA_10
-    );
+    input [31:0] command,
+    output [5:0] JA);
+    
+    assign JA = {JA_1, JA_2, JA_7, JA_8, JA_9, JA_10};
     
     wire EN_A, EN_B, IN1, IN2, IN3, IN4;
     assign JA_1 = EN_A;
@@ -18,19 +14,32 @@ module Stepper(
     assign JA_9 = IN3;
     assign JA_10 = IN4;
     
-    assign EN_A = 1'b1;
-    assign EN_B = 1'b1;
-    
     // Max speed = 190 Hz = 526,315 
     // Min speed =  50 Hz = 2,000,000
     reg [21:0] counter = 22'd0;
-    reg [21:0] counter_limit = 22'd1100000;
-    reg [21:0] counter_half_limit = 22'd1100000;
+    reg [21:0] counter_limit = 0;
     reg toggle_phase_1 = 1'b0;
     reg phase_1 = 1'b0;
     reg phase_2 = 1'b0;
+    reg EN_A_reg = 1'b0;
+    reg EN_B_reg = 1'b0;
+    always @(posedge CLK100MHZ) begin
+        if(command[21:0] < 22'd550000)begin
+            counter_limit = 22'd550000;
+        end
+        else if(command[31:0] > 22'd2000000)begin
+            counter_limit = 22'd2000000;
+        end
+        else begin
+            counter_limit = command[21:0];
+        end
+        //counter_limit = 22'd550000;      
+        EN_A_reg = 1'b1;//command[22];
+        EN_B_reg = 1'b1;//command[23];
+     end 
+    
     always @(posedge CLK100MHZ)begin
-        if(counter == counter_half_limit)begin
+        if(counter == counter_limit)begin
             if(toggle_phase_1)begin
                 phase_1 = ~phase_1;
             end else begin
@@ -47,4 +56,7 @@ module Stepper(
     assign IN2 = ~phase_1;
     assign IN3 = phase_2;
     assign IN4 = ~phase_2;
+    assign EN_A = EN_A_reg;
+    assign EN_B = EN_B_reg;
+    
 endmodule
