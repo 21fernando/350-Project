@@ -1,7 +1,9 @@
 `timescale 1ns / 1ps
 module Stepper(
     input CLK100MHZ,
-    input [31:0] command,
+    input [31:0] data_in,
+    input new_data,
+    output [31:0] data_out, 
     output [5:0] JA);
     
     assign JA = {JA_1, JA_2, JA_7, JA_8, JA_9, JA_10};
@@ -14,6 +16,14 @@ module Stepper(
     assign JA_9 = IN3;
     assign JA_10 = IN4;
     
+    reg [31:0] command;
+    always @(negedge CLK100MHZ)begin
+        if(new_data == 1'b1)begin
+            command = data_in;
+        end
+    end
+    assign data_out = command;
+    
     // Max speed = 190 Hz = 526,315 
     // Min speed =  50 Hz = 2,000,000
     reg [21:0] counter = 22'd0;
@@ -23,19 +33,20 @@ module Stepper(
     reg phase_2 = 1'b0;
     reg EN_A_reg = 1'b0;
     reg EN_B_reg = 1'b0;
+    wire [21:0]command_counter_limit;
+    assign command_counter_limit = command[21:0];
     always @(posedge CLK100MHZ) begin
         if(command[21:0] < 22'd550000)begin
             counter_limit = 22'd550000;
         end
-        else if(command[31:0] > 22'd2000000)begin
+        else if(command[21:0] > 22'd2000000)begin
             counter_limit = 22'd2000000;
         end
         else begin
             counter_limit = command[21:0];
-        end
-        //counter_limit = 22'd550000;      
-        EN_A_reg = 1'b1;//command[22];
-        EN_B_reg = 1'b1;//command[23];
+        end   
+        EN_A_reg = command[22];
+        EN_B_reg = command[23];
      end 
     
     always @(posedge CLK100MHZ)begin

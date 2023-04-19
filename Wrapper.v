@@ -39,10 +39,18 @@ module Wrapper (
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
+	wire[4:0] M_op;
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
-
+	
+	wire [5:0] JA;
+    assign JA_1 = JA[0];
+    assign JA_2 = JA[1];
+    assign JA_7 = JA[2];
+    assign JA_8 = JA[3];
+    assign JA_9 = JA[4];
+    assign JA_10 = JA[5];
 
 	// ADD YOUR MEMORY FILE HERE
 	localparam INSTR_FILE = "stepper";
@@ -60,7 +68,10 @@ module Wrapper (
 									
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
-		.data(memDataIn), .q_dmem(memDataOut)); 
+		.data(memDataOut), .q_dmem(memDataOut),
+		
+		//IO
+		.JA(JA)); 
 	
 	// Instruction Memory (ROM)
 	// Instruction Memory (ROM)
@@ -74,38 +85,16 @@ module Wrapper (
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
-		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));
-
-	wire IO_wEn;
-	wire [31:0] IO_dataIn, IO_dataOut;
-	wire [11:0] IO_addr;								
+		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));							
 	
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 
 		.wEn(mwe),
-		.IO_wEn(IO_wEn), 
 		.addr(memAddr[11:0]),
-		.IO_addr(IO_addr), 
 		.dataIn(memDataIn),
-		.IO_dataIn(IO_dataIn),
-		.dataOut(memDataOut),
-		.IO_dataOut(IO_dataOut)
+		.dataOut(memDataOut)
 	);
-    wire [5:0] JA;
-    assign JA_1 = JA[0];
-    assign JA_2 = JA[1];
-    assign JA_7 = JA[2];
-    assign JA_8 = JA[3];
-    assign JA_9 = JA[4];
-    assign JA_10 = JA[5];
     
-	IO io(
-        .clk(clock),
-        .IO_dataIn(IO_dataOut),
-        .IO_dataOut(IO_dataIn),
-        .IO_addr(IO_addr),
-        .IO_wEn(IO_wEn),
-        .JA(JA)
-    );
+	
 
 endmodule

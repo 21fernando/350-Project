@@ -51,11 +51,12 @@ module Wrapper_tb #(parameter FILE = "nop");
 	wire[31:0] instAddr, instData, 
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
+	wire [5:0] JA;
 
 	// Wires for Test Harness
 	wire[4:0] rs1_test, rs1_in;
 	reg testMode = 0; 
-	reg[11:0] num_cycles = 3000;
+	reg[11:0] num_cycles = 1000;
 	reg[15*8:0] exp_text;
 	reg null;
 
@@ -92,7 +93,7 @@ module Wrapper_tb #(parameter FILE = "nop");
 									
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
-		.data(memDataIn), .q_dmem(memDataOut)); 
+		.data(memDataIn), .q_dmem(memDataOut), .JA(JA)); 
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({DIR, MEM_DIR, FILE, ".mem"}))

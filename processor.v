@@ -40,6 +40,8 @@ module processor(
     data_writeReg,                  // O: Data to write to for RegFile
     data_readRegA,                  // I: Data from port A of RegFile
     data_readRegB,                   // I: Data from port B of RegFile
+
+    JA
 	
 	);
 
@@ -60,6 +62,8 @@ module processor(
 	output [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
 	output [31:0] data_writeReg;
 	input [31:0] data_readRegA, data_readRegB;
+
+    output [5:0] JA;
 	
     //Stall wire
     wire stall, MD_stall, bypassing_stall;
@@ -320,7 +324,7 @@ module processor(
     // Dmem
     assign address_dmem = M_alu_out;
     assign data = M_regfile_B_byp;
-    assign wren = M_insn[31:27] == 5'b00111;
+    assign wren = M_insn[31:27] == 5'b00111 && M_alu_out[31:30] == 2'b00;
 
     //If JAL, modify instruction to put reg 31 here, hopefully this moves some combinational delay to this stage instead of writeback
     wire [31:0] M_modified_insn, M_selected_insn;
@@ -331,7 +335,7 @@ module processor(
         .reset(reset),
         .i_insn(M_selected_insn),
         .i_ALU_O(M_alu_out),
-        .i_mem_D(q_dmem),
+        .i_mem_D(CPUmemDataIn),
         .i_MD_O(MD_reg_result),
         .i_MD_insn(MD_insn),
         .i_MD_rdy(M_MD_ready),
@@ -342,6 +346,23 @@ module processor(
         .o_MD_insn(W_MD_insn),
         .o_MD_rdy(W_MD_rdy)
     );
+
+    wire[31:0] IOdataOut, CPUmemDataIn; 
+    //Cases:
+	//memAddr[13:12] == 11 ==> Invalid
+	//memAddr[13:12] == 10 ==> IO Read
+	//memAddr[13:12] == 01 ==> IO Write
+	//memAddr[13:12] == 00 ==> Non-IO mem access
+    assign IO_insn = (M_insn[31:27] == 5'b00111 || M_insn[31:27] == 5'b01000) && (address_dmem[13] == 1'b1 || address_dmem[12] == 1'b1);
+	IO io(
+        .clk(clock),
+		.IOinsn(IO_insn),
+        .dataIn(data),
+		.memAddr(address_dmem),
+		.dataOut(IOdataOut),
+        .JA(JA)
+    );
+	assign CPUmemDataIn = (IO_insn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;
 
     //=======================================================================//
     //======================== WRITEBACK STAGE ==============================//

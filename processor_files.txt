@@ -38,5 +38,7 @@ processor.v
 RAM.v
 regfile.v
 ROM.v
+stepper.v
+IO.v
 Wrapper_tb.v
 Wrapper.v

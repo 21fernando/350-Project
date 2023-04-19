@@ -1,19 +1,23 @@
+//SW to addresses > 4096 = write to IO device, tell it to do something
+//LW to addresses > 4096 = read from IO device, ask it what its status is
 module IO(
     input clk,
-    input [31:0] IO_dataIn,
-    output [31:0] IO_dataOut,
-    output [11:0] IO_addr,
-    output IO_wEn,
+    input IOinsn,
+    input [31:0] dataIn,
+    input [31:0] memAddr,
+    output [31:0] dataOut,
     output [5:0] JA
     );
     
-    assign IO_wEn = 1'b0;
-    assign IO_addr = 12'd4095;
-    assign IO_dataOut = 31'd0; 
+    wire new_stepper_data = memAddr[12] && IOinsn;
+    wire [31:0] stepper_data_out;
+    assign dataOut = stepper_data_out;
     
     Stepper stepper(
         .CLK100MHZ(clk),
-        .command(IO_dataIn),
+        .data_in(dataIn),
+        .new_data(new_stepper_data),
+        .data_out(stepper_data_out),
         .JA(JA)
     );    
 
