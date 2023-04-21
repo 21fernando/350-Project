@@ -20,5 +20,5 @@ module IO(
         .data_out(stepper_data_out),
         .JA(JA)
     );    
-
+     //ila_0 debuggers(.clk(clk), .probe0(new_stepper_data), .probe1(dataIn), .probe2(stepper_data_out), .probe3(stepper_data_out));
 endmodule

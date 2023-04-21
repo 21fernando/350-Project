@@ -32,10 +32,13 @@ module Wrapper (
     output JA_7,
     output JA_8,
     output JA_9,
-    output JA_10);
+    output JA_10,
+    input SW,
+    output LED);
     
 	assign clock = CLK100MHZ;
 	assign reset = BTNC;
+	assign LED = instData[0];
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;
@@ -53,7 +56,7 @@ module Wrapper (
     assign JA_10 = JA[5];
 
 	// ADD YOUR MEMORY FILE HERE
-	localparam INSTR_FILE = "stepper";
+	localparam INSTR_FILE = "C:/Users/taf27/Documents/350-Project/assembler/stepper";
 	
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 

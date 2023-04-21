@@ -353,16 +353,21 @@ module processor(
 	//memAddr[13:12] == 10 ==> IO Read
 	//memAddr[13:12] == 01 ==> IO Write
 	//memAddr[13:12] == 00 ==> Non-IO mem access
-    assign IO_insn = (M_insn[31:27] == 5'b00111 || M_insn[31:27] == 5'b01000) && (address_dmem[13] == 1'b1 || address_dmem[12] == 1'b1);
-	IO io(
-        .clk(clock),
-		.IOinsn(IO_insn),
-        .dataIn(data),
-		.memAddr(address_dmem),
-		.dataOut(IOdataOut),
+    assign IOinsn = (M_insn[31:27] == 5'b00111 || M_insn[31:27] == 5'b01000) && (address_dmem[13] == 1'b1 || address_dmem[12] == 1'b1);
+	wire [31:0] test;
+	assign test = {10'd0, 22'd700000};
+	wire [21:0] debug;
+	assign debug = data[21:0];
+	wire new_stepper_data = address_dmem[12] && IOinsn;
+    Stepper stepper(
+        .CLK100MHZ(clock),
+        .data_in(data),
+        .new_data(new_stepper_data),
+        .data_out(IOdataOut),
         .JA(JA)
-    );
-	assign CPUmemDataIn = (IO_insn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;
+    ); 
+    ila_0 debuggers(.clk(clock), .probe0(new_stepper_data), .probe1(data), .probe2(IOdataOut), .probe3(debug));
+	assign CPUmemDataIn = (IOinsn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;
 
     //=======================================================================//
     //======================== WRITEBACK STAGE ==============================//

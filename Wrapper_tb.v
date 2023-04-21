@@ -33,14 +33,14 @@
  *
  **/
 
-module Wrapper_tb #(parameter FILE = "nop");
+module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assembler/stepper");
 
 	// FileData
 	localparam DIR = "Test Files/";
 	localparam MEM_DIR = "Memory Files/";
 	localparam OUT_DIR = "Output Files/";
 	localparam VERIF_DIR = "Verification Files/";
-	localparam DEFAULT_CYCLES = 255;
+	localparam DEFAULT_CYCLES = 3000;
 
 	// Inputs to the processor
 	reg clock = 0, reset = 0;
@@ -56,7 +56,7 @@ module Wrapper_tb #(parameter FILE = "nop");
 	// Wires for Test Harness
 	wire[4:0] rs1_test, rs1_in;
 	reg testMode = 0; 
-	reg[11:0] num_cycles = 1000;
+	reg[11:0] num_cycles = 3000;
 	reg[15*8:0] exp_text;
 	reg null;
 
@@ -96,7 +96,7 @@ module Wrapper_tb #(parameter FILE = "nop");
 		.data(memDataIn), .q_dmem(memDataOut), .JA(JA)); 
 	
 	// Instruction Memory (ROM)
-	ROM #(.MEMFILE({DIR, MEM_DIR, FILE, ".mem"}))
+	ROM #(.MEMFILE({"C:/Users/taf27/Documents/350-Project/assembler/stepper", ".mem"}))
 	InstMem(.clk(clock), 
 		.addr(instAddr[11:0]), 
 		.dataOut(instData));

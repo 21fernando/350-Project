@@ -17,9 +17,11 @@ module Stepper(
     assign JA_10 = IN4;
     
     reg [31:0] command;
-    always @(negedge CLK100MHZ)begin
+    always @(posedge CLK100MHZ)begin
         if(new_data == 1'b1)begin
             command = data_in;
+        end else begin
+            command = command;
         end
     end
     assign data_out = command;
@@ -36,11 +38,12 @@ module Stepper(
     wire [21:0]command_counter_limit;
     assign command_counter_limit = command[21:0];
     always @(posedge CLK100MHZ) begin
-        if(command[21:0] < 22'd550000)begin
-            counter_limit = 22'd550000;
+//            counter_limit = 22'd500000;//command[21:0];
+        if(command[21:0] < 22'd263158)begin
+            counter_limit = 22'd263158;
         end
-        else if(command[21:0] > 22'd2000000)begin
-            counter_limit = 22'd2000000;
+        else if(command[21:0] > 22'd1000000)begin
+            counter_limit = 22'd1000000;
         end
         else begin
             counter_limit = command[21:0];
@@ -70,4 +73,6 @@ module Stepper(
     assign EN_A = EN_A_reg;
     assign EN_B = EN_B_reg;
     
+    
+   
 endmodule

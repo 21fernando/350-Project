@@ -1,15 +1,15 @@
 init: 
-	addi $a0, $0, 50
-	jal set_stepper_speed
+	# addi $a0, $0, 50
+	# jal set_stepper_speed
+	# j init
 	# jal turn_on_stepper
 main:
-	# addi $t0, $0, 1023
-	# sll $t0, $t0, 10
-	# addi $t0, $0, 1023
-	# sll $t0, $t0, 10
-	# addi $t0, $0, 255
-	# sll $t0, $t0, 10 # $t0 = time between speed changes
-	addi $t0, $0, 10
+	addi $t0, $0, 2048
+	sll $t0, $t0, 10
+	addi $t0, $t0, 1023
+	sll $t0, $t0, 10
+	addi $t0, $t0, 255 # $t0 = time between speed changes
+	# addi $t0, $0, 10
 	addi $t1, $0, 0
 	loop:
 	addi $t1, $t1, 1
@@ -20,19 +20,18 @@ main:
 	addi $a0, $0, 1
 	no_need_speed_fix:
 	jal set_stepper_speed
-	addi $t0, $0, 1
+	addi $t1, $0, 1
 	j loop
 j main
 
 set_stepper_speed:
 	addi $s0, $0, 7368
 	mul $s1, $s0, $a0
-	addi $s0, $0, 25000
-	addi $s0, $s0, 25000
-	addi $s0, $s0, 25000
-	addi $s0, $s0, 25000
-	sub $s0, $s0, $s1 # s0 = 1000000- 7368 * $a0
-	sw $s0, 4097($0) # Store speed to the register in memory
+	addi $s0, $0, 244
+	sll $s0, $s0, 12
+	addi $s0, $s0, 576
+	sub $s2, $s0, $s1 # s0 = 1000000- 7368 * $a0
+	sw $s2, 4097($0) # Store speed to the register in memory
 	jr $ra # Return to main 
 
 turn_on_stepper: 
