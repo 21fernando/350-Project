@@ -96,7 +96,7 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 		.data(memDataIn), .q_dmem(memDataOut), .JA(JA)); 
 	
 	// Instruction Memory (ROM)
-	ROM #(.MEMFILE({"C:/Users/taf27/Documents/350-Project/assembler/stepper", ".mem"}))
+	ROM #(.MEMFILE({"C:/Users/taf27/Documents/350-Project/assembler/stepper.mem"}))
 	InstMem(.clk(clock), 
 		.addr(instAddr[11:0]), 
 		.dataOut(instData));

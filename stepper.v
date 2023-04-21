@@ -19,9 +19,9 @@ module Stepper(
     reg [31:0] command;
     always @(posedge CLK100MHZ)begin
         if(new_data == 1'b1)begin
-            command = data_in;
+            command <= data_in;
         end else begin
-            command = command;
+            command <= command;
         end
     end
     assign data_out = command;
@@ -40,29 +40,29 @@ module Stepper(
     always @(posedge CLK100MHZ) begin
 //            counter_limit = 22'd500000;//command[21:0];
         if(command[21:0] < 22'd263158)begin
-            counter_limit = 22'd263158;
+            counter_limit <= 22'd263158;
         end
         else if(command[21:0] > 22'd1000000)begin
-            counter_limit = 22'd1000000;
+            counter_limit <= 22'd1000000;
         end
         else begin
-            counter_limit = command[21:0];
+            counter_limit <= command[21:0];
         end   
-        EN_A_reg = command[22];
-        EN_B_reg = command[23];
+        EN_A_reg <= command[22];
+        EN_B_reg <= command[23];
      end 
     
     always @(posedge CLK100MHZ)begin
         if(counter == counter_limit)begin
             if(toggle_phase_1)begin
-                phase_1 = ~phase_1;
+                phase_1 <= ~phase_1;
             end else begin
-                phase_2 = ~phase_2;
+                phase_2 <= ~phase_2;
             end
-            counter = 22'd0;
-            toggle_phase_1 = ~toggle_phase_1;
+            counter <= 22'd0;
+            toggle_phase_1 <= ~toggle_phase_1;
         end else begin
-            counter = counter + 1'b1;
+            counter <= counter + 1'b1;
         end
     end
     

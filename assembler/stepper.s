@@ -30,7 +30,7 @@ set_stepper_speed:
 	addi $s0, $0, 244
 	sll $s0, $s0, 12
 	addi $s0, $s0, 576
-	sub $s2, $s0, $s1 # s0 = 1000000- 7368 * $a0
+	sub $s2, $s0, $s1 # s2 = 1000000- 7368 * $a0
 	sw $s2, 4097($0) # Store speed to the register in memory
 	jr $ra # Return to main 
 

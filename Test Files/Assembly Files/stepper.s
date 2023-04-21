@@ -1,19 +1,19 @@
 init: 
-	addi $a0, $0, 50
-	jal set_stepper_speed
-	jal turn_on_stepper
+	# addi $a0, $0, 50
+	# jal set_stepper_speed
+	# jal turn_on_stepper
 main:
 	addi $t0, $0, 1023
 	sll $t0, $t0, 10
-	addi $t0, $0, 1023
+	addi $t0, $t0, 1023
 	sll $t0, $t0, 10
-	addi $t0, $0, 255
-	sll $t0, $t0, 10 # $t0 = 2^32 - 2^ 
+	addi $t0, $t0, 255
+	#sll $t0, $t0, 10 # $t0 = 2^32 - 2^ 
 	addi $t1, $0, 0
 	loop:
 	addi $t1, $t1, 10
 	blt $t1, $t0, loop # stall 10000 clock cycles
-	addi $a0, $a0, 1 # increment the speed
+	addi $a0, $a0, 10 # increment the speed
 	addi $t0, $0, 100
 	blt $t0, $a0, no_need_speed_fix
 	addi $a0, $0, 1
