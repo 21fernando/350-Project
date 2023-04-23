@@ -41,7 +41,9 @@ module processor(
     data_readRegA,                  // I: Data from port A of RegFile
     data_readRegB,                   // I: Data from port B of RegFile
 
-    JA
+    JA,
+    reg_24,
+    reg_25
 	
 	);
 
@@ -64,6 +66,7 @@ module processor(
 	input [31:0] data_readRegA, data_readRegB;
 
     output [5:0] JA;
+    input[31:0] reg_24,reg_25;
 	
     //Stall wire
     wire stall, MD_stall, bypassing_stall;
@@ -358,10 +361,8 @@ module processor(
 	assign test = {10'd0, 22'd700000};
     IO io(
         .clk(clock),
-        .IOinsn(IOinsn),
-        .dataIn(data),
-        .memAddr(address_dmem),
-        .dataOut(IOdataOut),
+        .reg_24(reg_24),
+        .reg_25(reg_25),
         .JA(JA)
     );
 	assign CPUmemDataIn = q_dmem;//(IOinsn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;

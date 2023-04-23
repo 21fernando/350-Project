@@ -2,14 +2,15 @@ module regfile (
 	clock,
 	ctrl_writeEnable, ctrl_reset, ctrl_writeReg,
 	ctrl_readRegA, ctrl_readRegB, data_writeReg,
-	data_readRegA, data_readRegB
+	data_readRegA, data_readRegB,
+	reg_24, reg_25
 );
 
 	input clock, ctrl_writeEnable, ctrl_reset;
 	input [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
 	input [31:0] data_writeReg;
 
-	output [31:0] data_readRegA, data_readRegB;
+	output [31:0] data_readRegA, data_readRegB, reg_24, reg_25;
 
 	wire [31:0] reg_out [31:0];
 	wire [31:0] reg_en;
@@ -60,5 +61,13 @@ module regfile (
 			tristate tri_buf2(.D(reg_out[c]), .E(read_2_sel[c]), .Q(data_readRegB));
 		end
 	endgenerate
+
+
+	//==============
+	// IO Registers
+	//==============
+
+	assign reg_24 = reg_out[24];
+	assign reg_25 = reg_out[25];
 
 endmodule

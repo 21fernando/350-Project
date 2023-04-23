@@ -2,10 +2,8 @@
 //LW to addresses > 4096 = read from IO device, ask it what its status is
 module IO(
     input clk,
-    input IOinsn,
-    input [31:0] dataIn,
-    input [31:0] memAddr,
-    output [31:0] dataOut,
+    input [31:0] reg_24,
+    input [31:0] reg_25,
     output [5:0] JA
     );
     
@@ -15,10 +13,9 @@ module IO(
     wire [31:0] test_data = 32'd500;
     Stepper stepper(
         .CLK100MHZ(clk),
-        .data_in(dataIn),
+        .data_in(reg_24),
         .new_data(new_stepper_data),
         .data_out(stepper_data_out),
         .JA(JA)
     );    
-     //ila_0 debuggers(.clk(clk), .probe0(new_stepper_data), .probe1(dataIn), .probe2(stepper_data_out), .probe3(stepper_data_out));
 endmodule

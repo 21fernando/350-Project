@@ -53,6 +53,8 @@ module Wrapper (
     assign JA_9 = JA[4];
     assign JA_10 = JA[5];
 
+	wire [31:0] reg_24, reg_25;
+
 	// ADD YOUR MEMORY FILE HERE
 	localparam INSTR_FILE = "C:/Users/taf27/Documents/350-Project/assembler/stepper";
 	
@@ -72,7 +74,8 @@ module Wrapper (
 		.data(memDataOut), .q_dmem(memDataOut),
 		
 		//IO
-		.JA(JA)); 
+		.JA(JA),
+		.reg_24(reg_24), .reg_25(reg_25)); 
 	
 	// Instruction Memory (ROM)
 	// Instruction Memory (ROM)
@@ -86,7 +89,8 @@ module Wrapper (
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1), .ctrl_readRegB(rs2), 
-		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));							
+		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
+		.reg_24(reg_24), .reg_25(reg_25));							
 	
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 

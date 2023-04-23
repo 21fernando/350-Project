@@ -3,7 +3,6 @@ module Stepper(
     input CLK100MHZ,
     input [31:0] data_in,
     input new_data,
-    output [31:0] data_out, 
     output [5:0] JA);
     
     assign JA = {JA_1, JA_2, JA_7, JA_8, JA_9, JA_10};
@@ -17,13 +16,13 @@ module Stepper(
     assign JA_10 = IN4;
     
     reg [31:0] command;
+    reg [20:0] target_pos = 22'd0;
     always @(posedge CLK100MHZ)begin
         if(new_data == 1'b1)begin
             command <= data_in;
             target_pos <= data_in[20:0];
         end
     end
-    assign data_out = command;
     
     // Max speed = 190 Hz = 526,315 
     // Min speed =  50 Hz = 2,000,000
@@ -33,7 +32,6 @@ module Stepper(
     reg phase_1 = 1'b0;
     reg phase_2 = 1'b0;
     reg [20:0] current_pos = 22'd0;
-    reg [20:0] target_pos = 22'd0;
 
     
     always @(posedge CLK100MHZ)begin
