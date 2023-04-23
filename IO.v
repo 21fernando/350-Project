@@ -12,7 +12,7 @@ module IO(
     wire new_stepper_data = memAddr[12] && IOinsn;
     wire [31:0] stepper_data_out;
     assign dataOut = stepper_data_out;
-    
+    wire [31:0] test_data = 32'd500;
     Stepper stepper(
         .CLK100MHZ(clk),
         .data_in(dataIn),

@@ -33,12 +33,10 @@ module Wrapper (
     output JA_8,
     output JA_9,
     output JA_10,
-    input SW,
-    output LED);
+    input SW);
     
 	assign clock = CLK100MHZ;
 	assign reset = BTNC;
-	assign LED = instData[0];
 
 	wire rwe, mwe;
 	wire[4:0] rd, rs1, rs2;

@@ -20,8 +20,7 @@ module Stepper(
     always @(posedge CLK100MHZ)begin
         if(new_data == 1'b1)begin
             command <= data_in;
-        end else begin
-            command <= command;
+            target_pos <= data_in[20:0];
         end
     end
     assign data_out = command;
@@ -29,28 +28,13 @@ module Stepper(
     // Max speed = 190 Hz = 526,315 
     // Min speed =  50 Hz = 2,000,000
     reg [21:0] counter = 22'd0;
-    reg [21:0] counter_limit = 0;
+    reg [21:0] counter_limit = 22'd263158;
     reg toggle_phase_1 = 1'b0;
     reg phase_1 = 1'b0;
     reg phase_2 = 1'b0;
-    reg EN_A_reg = 1'b0;
-    reg EN_B_reg = 1'b0;
-    wire [21:0]command_counter_limit;
-    assign command_counter_limit = command[21:0];
-    always @(posedge CLK100MHZ) begin
-//            counter_limit = 22'd500000;//command[21:0];
-        if(command[21:0] < 22'd263158)begin
-            counter_limit <= 22'd263158;
-        end
-        else if(command[21:0] > 22'd1000000)begin
-            counter_limit <= 22'd1000000;
-        end
-        else begin
-            counter_limit <= command[21:0];
-        end   
-        EN_A_reg <= command[22];
-        EN_B_reg <= command[23];
-     end 
+    reg [20:0] current_pos = 22'd0;
+    reg [20:0] target_pos = 22'd0;
+
     
     always @(posedge CLK100MHZ)begin
         if(counter == counter_limit)begin
@@ -61,17 +45,37 @@ module Stepper(
             end
             counter <= 22'd0;
             toggle_phase_1 <= ~toggle_phase_1;
+            if(moving) begin
+                current_pos <= current_pos + 1;
+            end else begin
+                current_pos <=target_pos;
+            end
         end else begin
             counter <= counter + 1'b1;
         end
     end
     
-    assign IN1 = phase_1;
-    assign IN2 = ~phase_1;
-    assign IN3 = phase_2;
-    assign IN4 = ~phase_2;
-    assign EN_A = EN_A_reg;
-    assign EN_B = EN_B_reg;
+    reg moving_forward = 1'b0;
+    reg moving = 1'b0;
+    always @(posedge CLK100MHZ) begin  
+        if(current_pos < target_pos) begin
+            moving_forward <= 1'b1;
+            moving <= 1'b1;
+        end else if (current_pos > target_pos) begin
+            moving_forward <= 1'b0;
+            moving <= 1'b1;
+        end else begin
+            moving_forward <= 1'b0;
+            moving <= 1'b0;
+        end
+    end
+    
+    assign IN1 = (moving_forward) ? phase_1 : phase_2;
+    assign IN2 = (moving_forward) ? ~phase_1 : ~phase_2;
+    assign IN3 = (moving_forward) ? phase_2 : phase_1;
+    assign IN4 = (moving_forward) ? ~phase_2 : ~phase_1;
+    assign EN_A = moving;
+    assign EN_B = moving;
     
     
    

@@ -1,0 +1,71 @@
+[33mcommit fb0cf0906aba0e158a46120114f39b999f2ed157[m[33m ([m[1;36mHEAD -> [m[1;32mmmap_io[m[33m)[m
+Author: Anthony Fernando <taf27@duke.edu>
+Date:   Fri Apr 21 17:02:33 2023 -0400
+
+    l
+
+[33mcommit 65853dc6798e28d041081436e55702adeaaceb73[m[33m ([m[1;31morigin/mmap_io[m[33m)[m
+Author: Anthony Fernando <taf27@duke.edu>
+Date:   Fri Apr 21 01:06:45 2023 -0400
+
+    motor almost working
+
+[33mcommit 5d8087c18cbe0cb5774d497b08d08b29421385e2[m
+Author: Anthony Fernando <taf27@duke.edu>
+Date:   Thu Apr 20 15:10:37 2023 -0400
+
+    almost done w stepper code debugging
+
+[33mcommit 50635da6f7d66b03f97f1cd90b3bb326f7955618[m
+Author: Anthony Fernando <taf27@duke.edu>
+Date:   Thu Apr 20 00:39:07 2023 -0400
+
+    stepper change
+
+[33mcommit 8a96eb7dac1775dd9e40902f608616e413324faa[m
+Author: taf27 <taf27@duke.edu>
+Date:   Wed Apr 19 00:07:56 2023 -0400
+
+    working in sim
+
+[33mcommit 8d85329e120bdd26604e2cfffc61a0c6611b9214[m
+Author: Anthony Fernando <taf27@duke.edu>
+Date:   Sat Apr 15 18:17:30 2023 -0400
+
+    added vivado project
+
+[33mcommit cd6c5484fed22cc0fb72d1953db078d31a7f840a[m
+Author: taf27 <taf27@duke.edu>
+Date:   Sat Apr 15 14:36:56 2023 -0400
+
+    IO branch
+
+[33mcommit 2bc42a4542e4d261dd411f35f422b2db3702a187[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mmain[m[33m)[m
+Author: Arya Tschand <43081871+aryatschand@users.noreply.github.com>
+Date:   Sat Apr 1 17:54:01 2023 -0400
+
+    Add files via upload
+
+[33mcommit e487218a37266e5ef2a1b8d780317b7e32b3ce9a[m
+Author: Tharindu <47069914+21fernando@users.noreply.github.com>
+Date:   Sat Apr 1 17:06:41 2023 -0400
+
+    Arithmetic Test File
+
+[33mcommit c8e62860c5c664dd8ff8d65d52a9448354e219bb[m
+Author: Tharindu <47069914+21fernando@users.noreply.github.com>
+Date:   Sat Apr 1 16:48:26 2023 -0400
+
+    Added Assembler and Test Files
+
+[33mcommit 5888d39af18d13f37359c33e0ef1bac0a44dda01[m
+Author: Tharindu <47069914+21fernando@users.noreply.github.com>
+Date:   Sat Apr 1 16:18:30 2023 -0400
+
+    Add files via upload
+
+[33mcommit 197a73bd04739c5818050d5775e40a885a4ebacb[m
+Author: Tharindu <47069914+21fernando@users.noreply.github.com>
+Date:   Sat Apr 1 16:12:16 2023 -0400
+
+    Initial commit

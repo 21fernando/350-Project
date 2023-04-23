@@ -364,7 +364,7 @@ module processor(
         .dataOut(IOdataOut),
         .JA(JA)
     );
-	assign CPUmemDataIn = (IOinsn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;
+	assign CPUmemDataIn = q_dmem;//(IOinsn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;
 
     //=======================================================================//
     //======================== WRITEBACK STAGE ==============================//

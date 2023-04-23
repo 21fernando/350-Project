@@ -3,25 +3,30 @@ init:
 	# jal set_stepper_speed
 	# j init
 	# jal turn_on_stepper
+	addi $a0, $0, 5000
+	jal set_target
 main:
-	addi $t0, $0, 2048
-	sll $t0, $t0, 10
-	addi $t0, $t0, 1023
-	sll $t0, $t0, 10
-	addi $t0, $t0, 255 # $t0 = time between speed changes
+	
+
+	# addi $t0, $0, 2048
+	# sll $t0, $t0, 10
+	# addi $t0, $t0, 1023
+	# sll $t0, $t0, 10
+	# addi $t0, $t0, 255 # $t0 = time between speed changes
 	# addi $t0, $0, 10
-	addi $t1, $0, 0
-	loop:
-	addi $t1, $t1, 1
-	blt $t1, $t0, loop # stall 10000 clock cycles
-	addi $a0, $a0, 10 # increment the speed
-	addi $t2, $0, 100
-	blt $a0, $t2, no_need_speed_fix
-	addi $a0, $0, 1
-	no_need_speed_fix:
-	jal set_stepper_speed
-	addi $t1, $0, 1
-	j loop
+	# addi $t1, $0, 0
+	# loop:
+	# addi $t1, $t1, 1
+	# blt $t1, $t0, loop # stall 10000 clock cycles
+	# addi $a0, $a0, 10 # increment the speed
+	# addi $t2, $0, 100
+	# blt $a0, $t2, no_need_speed_fix
+	# addi $a0, $0, 1
+	# no_need_speed_fix:
+	# jal set_stepper_speed
+	# addi $t1, $0, 1
+	# j loop
+	j main
 j main
 
 set_stepper_speed:
@@ -52,4 +57,9 @@ turn_off_stepper:
 	lw $s1, 4097($0)
 	or $s1, $s1, $s0
 	sw $s1 4097($0)
+	jr $ra
+
+set_target:
+	add $s0, $a0, $0
+	sw $s0, 4097($0)
 	jr $ra
