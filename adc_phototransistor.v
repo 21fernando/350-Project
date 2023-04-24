@@ -9,6 +9,7 @@ module adc_phototransistor(analog_input, CLK100MHZ, clk_out, output_goalie, new_
 	assign output_goalie [31:4] = 28'd0;
 	assign output_goalie [3:1] = min_address;
 	assign output_goalie [0] = move_goalie;
+	reg [7:0] transistor_count;
     
      reg [16:0] freq_count;
 
@@ -42,12 +43,10 @@ module adc_phototransistor(analog_input, CLK100MHZ, clk_out, output_goalie, new_
         freq_count <= freq_count + 1;
         if(freq_count == 5) begin
         
-            start_out <= 0;
 	        output_ready <= 1;
 	        
         end
         else if (freq_count == 1) begin
-            start_out <= 1;
             if(transistor_count < 7) begin
                 transistor_count <= transistor_count + 1;
             end
@@ -111,7 +110,7 @@ module adc_phototransistor(analog_input, CLK100MHZ, clk_out, output_goalie, new_
 	assign min_val = v78;
 	assign min_address = a78;
 
-	assign move_goalie = min_val < 8'd100 ? 1'b1 : 1'b0;
+	assign move_goalie = min_val < 8'd80 ? 1'b1 : 1'b0;
 
    
     //input that was received by the FPGA from the ADC
