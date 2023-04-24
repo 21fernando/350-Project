@@ -3,11 +3,60 @@ init:
 	# jal set_stepper_speed
 	# j init
 	# jal turn_on_stepper
-	addi $a0, $0, 5000
-	jal set_target
+	# addi $a0, $0, 2000
+	# jal set_target
 main:
-	
 
+	wait_for_ball:
+	addi $t0, $0, 1
+	and $t1, $t0, $25 # T1 now stores the move goalie bit
+	addi $t0, $0, 1
+	bne $t1, $t0, wait_for_ball
+
+	decode_phototransistors:
+	addi $t0, $0, 14
+	and $t1, $t0, $25
+	sra $t1, $t1, 1 # $t1 now holds the 3 min address bits in its LSBs
+
+	addi $t0, $0, 0
+	bne $t1, $t0, not_pos_0
+	addi $a0, $0, 0
+	j pos_loaded
+	not_pos_0:
+	addi $t0, $0, 1
+	bne $t1, $t0, not_pos_1
+	addi $a0, $0, 1
+	j pos_loaded
+	not_pos_1:
+	addi $t0, $0, 2
+	bne $t1, $t0, not_pos_2
+	addi $a0, $0, 2
+	j pos_loaded
+	not_pos_2:
+	addi $t0, $0, 3
+	bne $t1, $t0, not_pos_3
+	addi $a0, $0, 3
+	j pos_loaded
+	not_pos_3:
+	addi $t0, $0, 4
+	bne $t1, $t0, not_pos_4
+	addi $a0, $0, 4
+	j pos_loaded
+	not_pos_4:
+	addi $t0, $0, 5
+	bne $t1, $t0, not_pos_5
+	addi $a0, $0, 5
+	j pos_loaded
+	not_pos_5:
+	addi $t0, $0, 6
+	bne $t1, $t0, not_pos_6
+	addi $a0, $0, 6
+	j pos_loaded
+	not_pos_6:
+	addi $a0, $0, 7
+
+	pos_loaded:
+	jal set_target
 	# addi $t0, $0, 2048
 	# sll $t0, $t0, 10
 	# addi $t0, $t0, 1023
@@ -25,7 +74,7 @@ main:
 	# no_need_speed_fix:
 	# jal set_stepper_speed
 	# addi $t1, $0, 1
-	# j loop
+	# loop: j loop
 	j main
 j main
 
@@ -60,6 +109,5 @@ turn_off_stepper:
 	jr $ra
 
 set_target:
-	add $s0, $a0, $0
-	sw $s0, 4097($0)
+	add $24, $0, $a0
 	jr $ra

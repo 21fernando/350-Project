@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wave_config>
+   <wave_state>
+   </wave_state>
+   <db_ref_list>
+      <db_ref path="Wrapper_tb_behav.wdb" id="1">
+         <top_modules>
+            <top_module name="Wrapper_tb" />
+            <top_module name="glbl" />
+         </top_modules>
+      </db_ref>
+   </db_ref_list>
+   <zoom_setting>
+      <ZoomStartTime time="1,252.414 ns"></ZoomStartTime>
+      <ZoomEndTime time="2,317.932 ns"></ZoomEndTime>
+      <Cursor1Time time="1,430.000 ns"></Cursor1Time>
+   </zoom_setting>
+   <column_width_setting>
+      <NameColumnWidth column_width="276"></NameColumnWidth>
+      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+   </column_width_setting>
+   <WVObjectSize size="38" />
+   <wvobject fp_name="/Wrapper_tb/CPU/io/clk" type="logic">
+      <obj_property name="ElementShortName">clk</obj_property>
+      <obj_property name="ObjectShortName">clk</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/reg_24" type="array">
+      <obj_property name="ElementShortName">reg_24[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_24[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/reg_25" type="array">
+      <obj_property name="ElementShortName">reg_25[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_25[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/JA" type="array">
+      <obj_property name="ElementShortName">JA[5:0]</obj_property>
+      <obj_property name="ObjectShortName">JA[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/new_stepper_data" type="logic">
+      <obj_property name="ElementShortName">new_stepper_data</obj_property>
+      <obj_property name="ObjectShortName">new_stepper_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper_data_out" type="array">
+      <obj_property name="ElementShortName">stepper_data_out[31:0]</obj_property>
+      <obj_property name="ObjectShortName">stepper_data_out[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/test_data" type="array">
+      <obj_property name="ElementShortName">test_data[31:0]</obj_property>
+      <obj_property name="ObjectShortName">test_data[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/dataOut" type="logic">
+      <obj_property name="ElementShortName">dataOut</obj_property>
+      <obj_property name="ObjectShortName">dataOut</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/CLK100MHZ" type="logic">
+      <obj_property name="ElementShortName">CLK100MHZ</obj_property>
+      <obj_property name="ObjectShortName">CLK100MHZ</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/data_in" type="array">
+      <obj_property name="ElementShortName">data_in[31:0]</obj_property>
+      <obj_property name="ObjectShortName">data_in[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/new_data" type="logic">
+      <obj_property name="ElementShortName">new_data</obj_property>
+      <obj_property name="ObjectShortName">new_data</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/JA" type="array">
+      <obj_property name="ElementShortName">JA[5:0]</obj_property>
+      <obj_property name="ObjectShortName">JA[5:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/EN_A" type="logic">
+      <obj_property name="ElementShortName">EN_A</obj_property>
+      <obj_property name="ObjectShortName">EN_A</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/EN_B" type="logic">
+      <obj_property name="ElementShortName">EN_B</obj_property>
+      <obj_property name="ObjectShortName">EN_B</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/moving_forward" type="logic">
+      <obj_property name="ElementShortName">moving_forward</obj_property>
+      <obj_property name="ObjectShortName">moving_forward</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/moving_backward" type="logic">
+      <obj_property name="ElementShortName">moving_backward</obj_property>
+      <obj_property name="ObjectShortName">moving_backward</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/IN1" type="logic">
+      <obj_property name="ElementShortName">IN1</obj_property>
+      <obj_property name="ObjectShortName">IN1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/IN2" type="logic">
+      <obj_property name="ElementShortName">IN2</obj_property>
+      <obj_property name="ObjectShortName">IN2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/IN3" type="logic">
+      <obj_property name="ElementShortName">IN3</obj_property>
+      <obj_property name="ObjectShortName">IN3</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/IN4" type="logic">
+      <obj_property name="ElementShortName">IN4</obj_property>
+      <obj_property name="ObjectShortName">IN4</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/SW" type="array">
+      <obj_property name="ElementShortName">SW[15:0]</obj_property>
+      <obj_property name="ObjectShortName">SW[15:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/command" type="array">
+      <obj_property name="ElementShortName">command[31:0]</obj_property>
+      <obj_property name="ObjectShortName">command[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/target_pos" type="array">
+      <obj_property name="ElementShortName">target_pos[20:0]</obj_property>
+      <obj_property name="ObjectShortName">target_pos[20:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/counter" type="array">
+      <obj_property name="ElementShortName">counter[21:0]</obj_property>
+      <obj_property name="ObjectShortName">counter[21:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/counter_limit" type="array">
+      <obj_property name="ElementShortName">counter_limit[21:0]</obj_property>
+      <obj_property name="ObjectShortName">counter_limit[21:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/toggle_phase_1" type="logic">
+      <obj_property name="ElementShortName">toggle_phase_1</obj_property>
+      <obj_property name="ObjectShortName">toggle_phase_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/phase_1" type="logic">
+      <obj_property name="ElementShortName">phase_1</obj_property>
+      <obj_property name="ObjectShortName">phase_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/phase_2" type="logic">
+      <obj_property name="ElementShortName">phase_2</obj_property>
+      <obj_property name="ObjectShortName">phase_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/current_pos" type="array">
+      <obj_property name="ElementShortName">current_pos[20:0]</obj_property>
+      <obj_property name="ObjectShortName">current_pos[20:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/moving_forward" type="logic">
+      <obj_property name="ElementShortName">moving_forward</obj_property>
+      <obj_property name="ObjectShortName">moving_forward</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/JA_1" type="logic">
+      <obj_property name="ElementShortName">JA_1</obj_property>
+      <obj_property name="ObjectShortName">JA_1</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/JA_2" type="logic">
+      <obj_property name="ElementShortName">JA_2</obj_property>
+      <obj_property name="ObjectShortName">JA_2</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/JA_7" type="logic">
+      <obj_property name="ElementShortName">JA_7</obj_property>
+      <obj_property name="ObjectShortName">JA_7</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/JA_8" type="logic">
+      <obj_property name="ElementShortName">JA_8</obj_property>
+      <obj_property name="ObjectShortName">JA_8</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/JA_9" type="logic">
+      <obj_property name="ElementShortName">JA_9</obj_property>
+      <obj_property name="ObjectShortName">JA_9</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/JA_10" type="logic">
+      <obj_property name="ElementShortName">JA_10</obj_property>
+      <obj_property name="ObjectShortName">JA_10</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/RegisterFile/reg_24" type="array">
+      <obj_property name="ElementShortName">reg_24[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_24[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/RegisterFile/reg_25" type="array">
+      <obj_property name="ElementShortName">reg_25[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_25[31:0]</obj_property>
+   </wvobject>
+</wave_config>

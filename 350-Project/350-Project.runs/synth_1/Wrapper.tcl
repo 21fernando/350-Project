@@ -4,7 +4,7 @@
 
 set TIME_start [clock seconds] 
 namespace eval ::optrace {
-  variable script "C:/Users/taf27/350-Project/350-Project/350-Project.runs/synth_1/Wrapper.tcl"
+  variable script "C:/Users/taf27/Documents/350-Project/350-Project/350-Project.runs/synth_1/Wrapper.tcl"
   variable category "vivado_synth"
 }
 
@@ -72,64 +72,66 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
-set_msg_config -id {HDL 9-1061} -limit 100000
-set_msg_config -id {HDL 9-1654} -limit 100000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
-set_property webtalk.parent_dir C:/Users/taf27/350-Project/350-Project/350-Project.cache/wt [current_project]
-set_property parent.project_path C:/Users/taf27/350-Project/350-Project/350-Project.xpr [current_project]
+set_property webtalk.parent_dir C:/Users/taf27/Documents/350-Project/350-Project/350-Project.cache/wt [current_project]
+set_property parent.project_path C:/Users/taf27/Documents/350-Project/350-Project/350-Project.xpr [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
-set_property board_part digilentinc.com:nexys-a7-100t:part0:1.2 [current_project]
-set_property ip_output_repo c:/Users/taf27/350-Project/350-Project/350-Project.cache/ip [current_project]
+set_property ip_output_repo c:/Users/taf27/Documents/350-Project/350-Project/350-Project.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-read_mem C:/Users/taf27/350-Project/arithmetic.mem
+read_mem {
+  C:/Users/taf27/Documents/350-Project/arithmetic.mem
+  C:/Users/taf27/Documents/350-Project/assembler/stepper.mem
+}
 read_verilog -library xil_defaultlib {
-  C:/Users/taf27/350-Project/And_32.v
-  C:/Users/taf27/350-Project/CLA_16.v
-  C:/Users/taf27/350-Project/CLA_32.v
-  C:/Users/taf27/350-Project/CLA_8.v
-  C:/Users/taf27/350-Project/IO.v
-  C:/Users/taf27/350-Project/LeftShift.v
-  C:/Users/taf27/350-Project/Or_32.v
-  C:/Users/taf27/350-Project/RAM.v
-  C:/Users/taf27/350-Project/ROM.v
-  C:/Users/taf27/350-Project/RightShift.v
-  C:/Users/taf27/350-Project/alu.v
-  C:/Users/taf27/350-Project/counter_32.v
-  C:/Users/taf27/350-Project/decoder_32.v
-  C:/Users/taf27/350-Project/dffe_ref.v
-  C:/Users/taf27/350-Project/dffe_ref_falling.v
-  C:/Users/taf27/350-Project/divider.v
-  C:/Users/taf27/350-Project/dx_latch.v
-  C:/Users/taf27/350-Project/fd_latch.v
-  C:/Users/taf27/350-Project/multdiv.v
-  C:/Users/taf27/350-Project/multiplier.v
-  C:/Users/taf27/350-Project/mux_2.v
-  C:/Users/taf27/350-Project/mux_2_1.v
-  C:/Users/taf27/350-Project/mux_32.v
-  C:/Users/taf27/350-Project/mux_4.v
-  C:/Users/taf27/350-Project/mux_8.v
-  C:/Users/taf27/350-Project/mw_latch.v
-  C:/Users/taf27/350-Project/pc_latch.v
-  C:/Users/taf27/350-Project/processor.v
-  C:/Users/taf27/350-Project/pw_latch.v
-  C:/Users/taf27/350-Project/reg_32.v
-  C:/Users/taf27/350-Project/reg_64.v
-  C:/Users/taf27/350-Project/reg_65.v
-  C:/Users/taf27/350-Project/regfile.v
-  C:/Users/taf27/350-Project/stepper.v
-  C:/Users/taf27/350-Project/tffe_ref.v
-  C:/Users/taf27/350-Project/tristate.v
-  C:/Users/taf27/350-Project/twos_complement.v
-  C:/Users/taf27/350-Project/xm_latch.v
-  C:/Users/taf27/350-Project/Wrapper.v
+  C:/Users/taf27/Documents/350-Project/utilities/And_32.v
+  C:/Users/taf27/Documents/350-Project/utilities/CLA_16.v
+  C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v
+  C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v
+  C:/Users/taf27/Documents/350-Project/IO.v
+  C:/Users/taf27/Documents/350-Project/utilities/LeftShift.v
+  C:/Users/taf27/Documents/350-Project/utilities/Or_32.v
+  C:/Users/taf27/Documents/350-Project/RAM.v
+  C:/Users/taf27/Documents/350-Project/ROM.v
+  C:/Users/taf27/Documents/350-Project/utilities/RightShift.v
+  C:/Users/taf27/Documents/350-Project/adc_phototransistor.v
+  C:/Users/taf27/Documents/350-Project/alu.v
+  C:/Users/taf27/Documents/350-Project/utilities/counter_32.v
+  C:/Users/taf27/Documents/350-Project/decoder3to8.v
+  C:/Users/taf27/Documents/350-Project/utilities/decoder_32.v
+  C:/Users/taf27/Documents/350-Project/utilities/dffe_ref.v
+  C:/Users/taf27/Documents/350-Project/utilities/dffe_ref_falling.v
+  C:/Users/taf27/Documents/350-Project/divider.v
+  C:/Users/taf27/Documents/350-Project/latches/dx_latch.v
+  C:/Users/taf27/Documents/350-Project/latches/fd_latch.v
+  C:/Users/taf27/Documents/350-Project/multdiv.v
+  C:/Users/taf27/Documents/350-Project/multiplier.v
+  C:/Users/taf27/Documents/350-Project/utilities/mux_2.v
+  C:/Users/taf27/Documents/350-Project/utilities/mux_2_1.v
+  C:/Users/taf27/Documents/350-Project/utilities/mux_32.v
+  C:/Users/taf27/Documents/350-Project/utilities/mux_4.v
+  C:/Users/taf27/Documents/350-Project/utilities/mux_8.v
+  C:/Users/taf27/Documents/350-Project/latches/mw_latch.v
+  C:/Users/taf27/Documents/350-Project/latches/pc_latch.v
+  C:/Users/taf27/Documents/350-Project/processor.v
+  C:/Users/taf27/Documents/350-Project/latches/pw_latch.v
+  C:/Users/taf27/Documents/350-Project/utilities/reg_32.v
+  C:/Users/taf27/Documents/350-Project/utilities/reg_64.v
+  C:/Users/taf27/Documents/350-Project/utilities/reg_65.v
+  C:/Users/taf27/Documents/350-Project/regfile.v
+  C:/Users/taf27/Documents/350-Project/stepper.v
+  C:/Users/taf27/Documents/350-Project/utilities/tffe_ref.v
+  C:/Users/taf27/Documents/350-Project/utilities/tristate.v
+  C:/Users/taf27/Documents/350-Project/utilities/twos_complement.v
+  C:/Users/taf27/Documents/350-Project/latches/xm_latch.v
+  C:/Users/taf27/Documents/350-Project/Wrapper.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being
@@ -140,8 +142,8 @@ OPTRACE "Adding files" END { }
 foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
   set_property used_in_implementation false $dcp
 }
-read_xdc C:/Users/taf27/350-Project/350-Project/350-Project.srcs/constrs_1/new/master.xdc
-set_property used_in_implementation false [get_files C:/Users/taf27/350-Project/350-Project/350-Project.srcs/constrs_1/new/master.xdc]
+read_xdc C:/Users/taf27/Documents/350-Project/350-Project/350-Project.srcs/constrs_1/new/master.xdc
+set_property used_in_implementation false [get_files C:/Users/taf27/Documents/350-Project/350-Project/350-Project.srcs/constrs_1/new/master.xdc]
 
 set_param ips.enableIPCacheLiteLoad 1
 close [open __synthesis_is_running__ w]

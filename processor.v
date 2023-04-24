@@ -42,8 +42,15 @@ module processor(
     data_readRegB,                   // I: Data from port B of RegFile
 
     JA,
+    SW,
     reg_24,
-    reg_25
+    reg_25,
+    
+    analog_input,
+    clk_out,
+    new_address, 
+    min_address,
+    move_goalie
 	
 	);
 
@@ -66,8 +73,16 @@ module processor(
 	input [31:0] data_readRegA, data_readRegB;
 
     output [5:0] JA;
-    input[31:0] reg_24,reg_25;
+    input [15:0] SW;
+    input[31:0] reg_24;
+    output[31:0] reg_25;
 	
+	input [7:0] analog_input;
+    output clk_out;
+    output [2:0] new_address; 
+    output [2:0] min_address;
+    output move_goalie;
+    
     //Stall wire
     wire stall, MD_stall, bypassing_stall;
 
@@ -363,7 +378,12 @@ module processor(
         .clk(clock),
         .reg_24(reg_24),
         .reg_25(reg_25),
-        .JA(JA)
+        .JA(JA),
+        .analog_input(analog_input),
+        .clk_out(clk_out),
+        .new_address(new_address), 
+        .min_address(min_address),
+        .move_goalie(move_goalie)
     );
 	assign CPUmemDataIn = q_dmem;//(IOinsn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;
 

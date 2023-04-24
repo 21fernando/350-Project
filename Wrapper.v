@@ -32,8 +32,13 @@ module Wrapper (
     output JA_7,
     output JA_8,
     output JA_9,
-    output JA_10,
-    input SW);
+    output JA_10, 
+    output move_goalie,
+    output [2:0] min_address, 
+    input [7:0] analog_input,
+    output clk_out,
+    output [2:0] new_address
+    );
     
 	assign clock = CLK100MHZ;
 	assign reset = BTNC;
@@ -74,8 +79,15 @@ module Wrapper (
 		.data(memDataOut), .q_dmem(memDataOut),
 		
 		//IO
-		.JA(JA),
-		.reg_24(reg_24), .reg_25(reg_25)); 
+		.JA(JA), .SW(SW),
+		.reg_24(reg_24), .reg_25(reg_25), 
+		
+		 .move_goalie(move_goalie),
+        .min_address(min_address), 
+        .analog_input(analog_input),
+        .clk_out(clk_out),
+        .new_address(new_address)
+		); 
 	
 	// Instruction Memory (ROM)
 	// Instruction Memory (ROM)

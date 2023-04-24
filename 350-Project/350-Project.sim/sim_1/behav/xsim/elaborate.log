@@ -1,0 +1,146 @@
+Vivado Simulator v2021.1
+Copyright 1986-1999, 2001-2021 Xilinx, Inc. All Rights Reserved.
+Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 8b1e28a8a2f54380a637620d120baa4d --incr --debug typical --relax --mt 2 -L xil_defaultlib -L unisims_ver -L unimacro_ver -L secureip --snapshot Wrapper_tb_behav xil_defaultlib.Wrapper_tb xil_defaultlib.glbl -log elaborate.log 
+Using 2 slave threads.
+Starting static elaboration
+Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-5021] port 'started' is not connected on this instance [C:/Users/taf27/Documents/350-Project/multdiv.v:45]
+WARNING: [VRFC 10-3705] select index 4 into 'carries' is out of bounds [C:/Users/taf27/Documents/350-Project/utilities/CLA_16.v:13]
+Completed static elaboration
+Starting simulation data flow analysis
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_16.v" Line 1. Module CLA_16 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/LeftShift.v" Line 1. Module LeftShift_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/And_32.v" Line 1. Module And_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/Or_32.v" Line 1. Module Or_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/And_32.v" Line 1. Module And_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/Or_32.v" Line 1. Module Or_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/And_32.v" Line 1. Module And_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/Or_32.v" Line 1. Module Or_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/IO.v" Line 3. Module IO doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_16.v" Line 1. Module CLA_16 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/LeftShift.v" Line 1. Module LeftShift_default doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/And_32.v" Line 1. Module And_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/Or_32.v" Line 1. Module Or_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/And_32.v" Line 1. Module And_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/Or_32.v" Line 1. Module Or_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/And_32.v" Line 1. Module And_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/Or_32.v" Line 1. Module Or_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_32.v" Line 1. Module CLA_32 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/utilities/CLA_8.v" Line 2. Module CLA_8 doesn't have a timescale but at least one module in design has a timescale.
+WARNING: [XSIM 43-4099] "C:/Users/taf27/Documents/350-Project/IO.v" Line 3. Module IO doesn't have a timescale but at least one module in design has a timescale.
+Completed simulation data flow analysis
+Time Resolution for simulation is 1ps
+Compiling module xil_defaultlib.dffe_ref_falling
+Compiling module xil_defaultlib.pc_latch_default
+Compiling module xil_defaultlib.CLA_8
+Compiling module xil_defaultlib.CLA_16
+Compiling module xil_defaultlib.fd_latch_default
+Compiling module xil_defaultlib.dx_latch_default
+Compiling module xil_defaultlib.mux_2
+Compiling module xil_defaultlib.mux_4
+Compiling module xil_defaultlib.mux_8
+Compiling module xil_defaultlib.CLA_32
+Compiling module xil_defaultlib.mux_2_1
+Compiling module xil_defaultlib.LeftShift_default
+Compiling module xil_defaultlib.RightShift_default
+Compiling module xil_defaultlib.And_32
+Compiling module xil_defaultlib.Or_32
+Compiling module xil_defaultlib.alu
+Compiling module xil_defaultlib.xm_latch_default
+Compiling module xil_defaultlib.dffe_ref
+Compiling module xil_defaultlib.tffe
+Compiling module xil_defaultlib.counter_32
+Compiling module xil_defaultlib.reg_32_default
+Compiling module xil_defaultlib.reg_65_default
+Compiling module xil_defaultlib.multiplier
+Compiling module xil_defaultlib.twos_complement
+Compiling module xil_defaultlib.reg_64_default
+Compiling module xil_defaultlib.divider
+Compiling module xil_defaultlib.multdiv
+Compiling module xil_defaultlib.pw_latch_default
+Compiling module xil_defaultlib.mw_latch_default
+Compiling module xil_defaultlib.Stepper
+Compiling module xil_defaultlib.Phototransistors
+Compiling module xil_defaultlib.IO
+Compiling module xil_defaultlib.processor
+Compiling module xil_defaultlib.ROM(MEMFILE="C:/Users/taf27/Docu...
+Compiling module xil_defaultlib.mux_32
+Compiling module xil_defaultlib.decoder_32
+Compiling module xil_defaultlib.tristate
+Compiling module xil_defaultlib.regfile_default
+Compiling module xil_defaultlib.RAM
+Compiling module xil_defaultlib.Wrapper_tb
+Compiling module xil_defaultlib.glbl
+Built simulation snapshot Wrapper_tb_behav

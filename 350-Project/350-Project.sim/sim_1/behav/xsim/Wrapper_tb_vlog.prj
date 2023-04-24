@@ -1,0 +1,48 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  \
+"../../../../../utilities/And_32.v" \
+"../../../../../utilities/CLA_16.v" \
+"../../../../../utilities/CLA_32.v" \
+"../../../../../utilities/CLA_8.v" \
+"../../../../../IO.v" \
+"../../../../../utilities/LeftShift.v" \
+"../../../../../utilities/Or_32.v" \
+"../../../../350-Project.srcs/sources_1/new/Phototransistors.v" \
+"../../../../../RAM.v" \
+"../../../../../ROM.v" \
+"../../../../../utilities/RightShift.v" \
+"../../../../../alu.v" \
+"../../../../../utilities/counter_32.v" \
+"../../../../../utilities/decoder_32.v" \
+"../../../../../utilities/dffe_ref.v" \
+"../../../../../utilities/dffe_ref_falling.v" \
+"../../../../../divider.v" \
+"../../../../../latches/dx_latch.v" \
+"../../../../../latches/fd_latch.v" \
+"../../../../../multdiv.v" \
+"../../../../../multiplier.v" \
+"../../../../../utilities/mux_2.v" \
+"../../../../../utilities/mux_2_1.v" \
+"../../../../../utilities/mux_32.v" \
+"../../../../../utilities/mux_4.v" \
+"../../../../../utilities/mux_8.v" \
+"../../../../../latches/mw_latch.v" \
+"../../../../../latches/pc_latch.v" \
+"../../../../../processor.v" \
+"../../../../../latches/pw_latch.v" \
+"../../../../../utilities/reg_32.v" \
+"../../../../../utilities/reg_64.v" \
+"../../../../../utilities/reg_65.v" \
+"../../../../../regfile.v" \
+"../../../../../stepper.v" \
+"../../../../../utilities/tffe_ref.v" \
+"../../../../../utilities/tristate.v" \
+"../../../../../utilities/twos_complement.v" \
+"../../../../../latches/xm_latch.v" \
+"../../../../../Wrapper_tb.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

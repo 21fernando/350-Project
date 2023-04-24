@@ -52,6 +52,7 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 		rData, regA, regB,
 		memAddr, memDataIn, memDataOut;
 	wire [5:0] JA;
+	reg [15:0] SW;
 
 	// Wires for Test Harness
 	wire[4:0] rs1_test, rs1_in;
@@ -79,6 +80,8 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 	integer errors = 0,
 			cycles = 0,
 			reg_to_test = 0;
+			
+	wire [31:0] reg_24, reg_25;
 
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -93,7 +96,7 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 									
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
-		.data(memDataIn), .q_dmem(memDataOut), .JA(JA)); 
+		.data(memDataIn), .q_dmem(memDataOut), .JA(JA), .SW(SW), .reg_24(reg_24), .reg_25(reg_25)); 
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({"C:/Users/taf27/Documents/350-Project/assembler/stepper.mem"}))
@@ -106,7 +109,8 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 		.ctrl_writeEnable(rwe), .ctrl_reset(reset), 
 		.ctrl_writeReg(rd),
 		.ctrl_readRegA(rs1_in), .ctrl_readRegB(rs2), 
-		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB));
+		.data_writeReg(rData), .data_readRegA(regA), .data_readRegB(regB),
+		.reg_24(reg_24), .reg_25(reg_25));
 						
 	// Processor Memory (RAM)
 	RAM ProcMem(.clk(clock), 
@@ -163,7 +167,7 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 			// Check that the number of cycles was read
 			if(expScan != 1) begin
 				$display("Error reading the %0s file.", {FILE, "_exp.txt"});
-				$display("Make sure that file starts with \n\tnum cycles:NUM_CYCLES");;
+				$display("Make sure that file starts with \n\tnum cycles:NUM_CYCLES");
 				$display("Where NUM_CYCLES is a positive integer\n");
 			end
 		end
@@ -172,7 +176,7 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 		reset = 1;
 		#1
 		reset = 0;
-
+        SW = 16'd0;
 		// Run for the number of cycles specified 
 		for (cycles = 0; cycles < num_cycles; cycles = cycles + 1) begin
 			
@@ -180,6 +184,12 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 			@(posedge clock);
 			if (rwe && rd != 0) begin
 				$fdisplay(actFile, "Cycle %3d: Wrote %0d into register %0d", cycles, rData, rd);
+			end
+			
+			if (cycles >= 50 && cycles <= 70)begin
+			     SW = 16'd4;
+			end else begin
+			     SW = 16'd0;
 			end
 		end
 

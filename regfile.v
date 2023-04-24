@@ -10,7 +10,8 @@ module regfile (
 	input [4:0] ctrl_writeReg, ctrl_readRegA, ctrl_readRegB;
 	input [31:0] data_writeReg;
 
-	output [31:0] data_readRegA, data_readRegB, reg_24, reg_25;
+	output [31:0] data_readRegA, data_readRegB, reg_24;
+	input [31:0] reg_25;
 
 	wire [31:0] reg_out [31:0];
 	wire [31:0] reg_en;
@@ -26,7 +27,11 @@ module regfile (
 	genvar c;
 	generate
 		for(c=0; c<32; c=c+1)begin
-			reg_32 r(.q(reg_out[c]), .d(data_writeReg), .clk(clock), .en(reg_en[c]), .clr(ctrl_reset));
+		  if (c != 25)begin
+		      reg_32 r(.q(reg_out[c]), .d(data_writeReg), .clk(clock), .en(reg_en[c]), .clr(ctrl_reset));
+		  end else begin
+		      reg_32 r(.q(reg_out[c]), .d(reg_25), .clk(clock), .en(1'b1), .clr(ctrl_reset));
+		  end
 		end
 	endgenerate
 
@@ -68,6 +73,5 @@ module regfile (
 	//==============
 
 	assign reg_24 = reg_out[24];
-	assign reg_25 = reg_out[25];
 
 endmodule

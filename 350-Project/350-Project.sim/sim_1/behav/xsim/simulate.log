@@ -1,0 +1,10 @@
+Time resolution is 1 ps
+WARNING: Too many words specified in data file C:/Users/taf27/Documents/350-Project/assembler/stepper.mem
+ 67163053724251853449287969251222923953989095275515735138809011962495592745145313639893846510602040083293006474153208516133965903315649781639657500897400058113290
+WARNING: file Test Files/Verification Files/C:/Users/taf27/Documents/350-Project/assembler/stepper_exp.txt could not be opened
+Couldn't read the expected file.
+Make sure there is a C:/Users/taf27/Documents/350-Project/assembler/stepper_exp.txt file in the "Test Files/Verification Files/" directory.
+Continuing for 10000 cycles without checking for correctness,
+
+
+WARNING: file Test Files/Output Files/C:/Users/taf27/Documents/350-Project/assembler/stepper_actual.txt could not be opened

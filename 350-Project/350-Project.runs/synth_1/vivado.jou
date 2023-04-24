@@ -2,11 +2,11 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Sat Apr 15 18:06:34 2023
-# Process ID: 18316
-# Current directory: C:/Users/taf27/350-Project/350-Project/350-Project.runs/synth_1
+# Start of session at: Sun Apr 23 23:57:27 2023
+# Process ID: 4168
+# Current directory: C:/Users/taf27/Documents/350-Project/350-Project/350-Project.runs/synth_1
 # Command line: vivado.exe -log Wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Wrapper.tcl
-# Log file: C:/Users/taf27/350-Project/350-Project/350-Project.runs/synth_1/Wrapper.vds
-# Journal file: C:/Users/taf27/350-Project/350-Project/350-Project.runs/synth_1\vivado.jou
+# Log file: C:/Users/taf27/Documents/350-Project/350-Project/350-Project.runs/synth_1/Wrapper.vds
+# Journal file: C:/Users/taf27/Documents/350-Project/350-Project/350-Project.runs/synth_1\vivado.jou
 #-----------------------------------------------------------
 source Wrapper.tcl -notrace
