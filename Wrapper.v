@@ -37,7 +37,10 @@ module Wrapper (
     output [2:0] min_address, 
     input [7:0] analog_input,
     output clk_out,
-    output [2:0] new_address
+    output [2:0] new_address,
+	input limit_switch,
+	input beam_break,
+	output [9:0] sseg
     );
     
 	assign clock = CLK100MHZ;
@@ -82,11 +85,14 @@ module Wrapper (
 		.JA(JA), .SW(SW),
 		.reg_24(reg_24), .reg_25(reg_25), 
 		
-		 .move_goalie(move_goalie),
+		.move_goalie(move_goalie),
         .min_address(min_address), 
         .analog_input(analog_input),
         .clk_out(clk_out),
-        .new_address(new_address)
+        .new_address(new_address),
+		.limit_switch(limit_switch),
+		.beam_break(beam_break),
+		.sseg(sseg)
 		); 
 	
 	// Instruction Memory (ROM)

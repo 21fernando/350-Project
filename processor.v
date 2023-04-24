@@ -50,7 +50,10 @@ module processor(
     clk_out,
     new_address, 
     min_address,
-    move_goalie
+    move_goalie,
+    limit_switch,
+	beam_break,
+	sseg
 	
 	);
 
@@ -82,6 +85,9 @@ module processor(
     output [2:0] new_address; 
     output [2:0] min_address;
     output move_goalie;
+    input limit_switch,
+	input beam_break,
+	output [9:0] sseg
     
     //Stall wire
     wire stall, MD_stall, bypassing_stall;
@@ -383,7 +389,10 @@ module processor(
         .clk_out(clk_out),
         .new_address(new_address), 
         .min_address(min_address),
-        .move_goalie(move_goalie)
+        .move_goalie(move_goalie),
+        .limit_switch(limit_switch),
+	    .beam_break(beam_break),
+	    .sseg(sseg)
     );
 	assign CPUmemDataIn = q_dmem;//(IOinsn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;
 

@@ -8,7 +8,7 @@ main:
 	addi $t0, $t0, 1023
 	sll $t0, $t0, 10
 	addi $t0, $t0, 255
-	#sll $t0, $t0, 10 # $t0 = 2^32 - 2^ 
+	# sll $t0, $t0, 10 # $t0 = 2^32 - 2^ 
 	addi $t1, $0, 0
 	loop:
 	addi $t1, $t1, 10

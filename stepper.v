@@ -16,10 +16,12 @@ module Stepper(
     assign JA_10 = IN4;
     
     reg [31:0] command;
-    reg [20:0] target_pos = 22'd0;
+    reg [1:0] state;
+    reg [20:0] target_pos;
     always @(negedge CLK100MHZ)begin
         if(new_data == 1'b1 && !(moving_backward || moving_forward))begin
             command <= data_in;
+            state <= data_in [22:21];
             target_pos <= data_in[20:0];
         end
     end
@@ -35,23 +37,31 @@ module Stepper(
 
     
     always @(posedge CLK100MHZ)begin
-        if(counter == counter_limit)begin
-            if(toggle_phase_1)begin
-                phase_1 <= ~phase_1;
-            end else begin
-                phase_2 <= ~phase_2;
-            end
+        if (state == 1'b11) begin 
+            current_pos <= 22'd0; 
+            phase_1 <= 1'b0;
+            phase_2 <= 1'b0;
             counter <= 22'd0;
-            toggle_phase_1 <= ~toggle_phase_1;
-            if((moving_backward || moving_forward)) begin
-                if(moving_forward) begin
-                    current_pos <= current_pos + 1;
-                end else begin
-                    current_pos <= current_pos - 1;
-                end
-            end
+            toggle_phase_1 <= 1'b0;
         end else begin
-            counter <= counter + 1'b1;
+            if(counter == counter_limit)begin
+                if(toggle_phase_1)begin
+                    phase_1 <= ~phase_1;
+                end else begin
+                    phase_2 <= ~phase_2;
+                end
+                counter <= 22'd0;
+                toggle_phase_1 <= ~toggle_phase_1;
+                if((moving_backward || moving_forward)) begin
+                    if(moving_forward) begin
+                        current_pos <= current_pos + 1;
+                    end else begin
+                        current_pos <= current_pos - 1;
+                    end
+                end
+            end else begin
+                counter <= counter + 1'b1;
+            end
         end
     end
     
@@ -74,8 +84,8 @@ module Stepper(
     assign IN2 = (moving_forward) ? ~phase_1 : ~phase_2;
     assign IN3 = (moving_forward) ? phase_2 : phase_1;
     assign IN4 = (moving_forward) ? ~phase_2 : ~phase_1;
-    assign EN_A = (moving_backward || moving_forward);
-    assign EN_B = (moving_backward || moving_forward);
+    assign EN_A = (moving_backward || moving_forward) && (state != 2'b11);
+    assign EN_B = (moving_backward || moving_forward) && (state != 2'b11);
     
     
    

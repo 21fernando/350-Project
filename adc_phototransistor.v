@@ -3,15 +3,13 @@ module adc_phototransistor(analog_input, CLK100MHZ, clk_out, output_goalie, new_
     input CLK100MHZ;
     output reg clk_out;
 	
-	output [31:0] output_goalie;
+	output [3:0] output_goalie;
 	wire [2:0] min_address;
 	wire move_goalie;
-	assign output_goalie [31:4] = 28'd0;
 	assign output_goalie [3:1] = min_address;
 	assign output_goalie [0] = move_goalie;
 	reg [7:0] transistor_count;
-    
-     reg [16:0] freq_count;
+    reg [16:0] freq_count;
 
     output [2:0] new_address;
     //assign clk_out = CLK100MHZ;

@@ -1,12 +1,29 @@
 init: 
-	# addi $a0, $0, 50
-	# jal set_stepper_speed
-	# j init
-	# jal turn_on_stepper
-	# addi $a0, $0, 2000
-	# jal set_target
+	addi $t0, $0, 30000
+	sll $t0, $t0, 11
+	add $t0, $0, $0
+	initial_delay:
+	addi $t0, $t0, 1
+	bne $t0, $t1, initial_delay # wait a few second before starting
+	ready:
+	addi $a0, $0, 1000 
+	sub $a0, $0, $a0
+	jal set_target # set the target to be a large negative number
+	jal set_stepper_state_00 # set the stepper to operate normally
+	addi $t0, $0, 32 # switch data is on bit 5 so 2^5 = 32
+	wait_for_button:
+	bne $25, $t0, wait_for_button
+	# now button has been pressed
+	jal set_stepper_state_11 # stepper is now resetting its position
+	addi $t0, $0, 5
+	add $t1, $0, $0
+	wait_for_stepper_reset: 
+	addi $t1, $t1, 1
+	bne $t0, $t1, wait_for_stepper_reset # Now the stepper has waited a few clock cycles to allow the 0 value to sette into its system
+	addi $a0, $0, $0
+	jal set_target # set target to 0 to make sure stepper doesnt move past limit
+	jal set_stepper_state_00 # stepper is operating normally again
 main:
-
 	wait_for_ball:
 	addi $t0, $0, 1
 	and $t1, $t0, $25 # T1 now stores the move goalie bit
@@ -57,25 +74,9 @@ main:
 
 	pos_loaded:
 	jal set_target
-	# addi $t0, $0, 2048
-	# sll $t0, $t0, 10
-	# addi $t0, $t0, 1023
-	# sll $t0, $t0, 10
-	# addi $t0, $t0, 255 # $t0 = time between speed changes
-	# addi $t0, $0, 10
-	# addi $t1, $0, 0
-	# loop:
-	# addi $t1, $t1, 1
-	# blt $t1, $t0, loop # stall 10000 clock cycles
-	# addi $a0, $a0, 10 # increment the speed
-	# addi $t2, $0, 100
-	# blt $a0, $t2, no_need_speed_fix
-	# addi $a0, $0, 1
-	# no_need_speed_fix:
-	# jal set_stepper_speed
-	# addi $t1, $0, 1
-	# loop: j loop
+	
 	j main
+	
 j main
 
 set_stepper_speed:
@@ -110,4 +111,19 @@ turn_off_stepper:
 
 set_target:
 	add $24, $0, $a0
+	jr $ra
+
+set_stepper_state_00:
+	addi $s0, $0, 511
+	sll $s0, $s0, 11
+	addi $s0, $s0, 1023
+	sll $s0, $s0, 11
+	addi $s0, $s0, 2047 # $s0 contains the bitmask to change the state to 00 ==> 9 1's , 00, 21 1's
+	and $24, $24, $s0 # register 25 now has the stepper state 00 meaning normal movement
+	jr $ra
+
+set_stepper_state_11:
+	addi $s0, $0, 3
+	sll $s0, $s0, 21 # $s0 contains the bitmask to change the state to 11 ==> all 0 except 22-23 == 11
+	or $24, $s0, $24
 	jr $ra

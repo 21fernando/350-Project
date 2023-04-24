@@ -9,7 +9,10 @@ module IO(
     output clk_out,
     output [2:0] new_address, 
     output [2:0] min_address,
-    output move_goalie
+    output move_goalie,
+    input limit_switch,
+	input beam_break,
+	output [9:0] sseg
     );
     
     wire new_stepper_data = 1'b1;
@@ -23,13 +26,17 @@ module IO(
         .JA(JA)
     );    
     
-    assign min_address = reg_25[3:1];
-    assign move_goalie = reg_25[0];
+    wire [3:0] phototransistor_out;
+    assign min_address = phototransistor_out[3:1];
+    assign move_goalie = phototransistor_out[0];
     adc_phototransistor(
         .analog_input(analog_input),
         .CLK100MHZ(clk), 
         .clk_out(clk_out), 
-        .output_goalie(reg_25), 
+        .output_goalie(phototransistor_out), 
         .new_address(new_address));
+
+
+    assign reg_25 = {26'd0, limit_switch, beam_break, phototransistor_out};
     
 endmodule
