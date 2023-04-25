@@ -82,6 +82,13 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 			reg_to_test = 0;
 			
 	wire [31:0] reg_24, reg_25;
+	wire move_goalie;
+    wire [2:0] min_address; 
+    reg [7:0] analog_input;
+    wire clk_out;
+    wire [2:0] new_address;
+	reg limit_switch;
+	reg beam_break;
 
 	// Main Processing Unit
 	processor CPU(.clock(clock), .reset(reset), 
@@ -96,7 +103,15 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 									
 		// RAM
 		.wren(mwe), .address_dmem(memAddr), 
-		.data(memDataIn), .q_dmem(memDataOut), .JA(JA), .SW(SW), .reg_24(reg_24), .reg_25(reg_25)); 
+		.data(memDataIn), .q_dmem(memDataOut), .JA(JA), .reg_24(reg_24), .reg_25(reg_25),
+		.move_goalie(move_goalie),
+        .min_address(min_address), 
+        .analog_input(analog_input),
+        .clk_out(clk_out),
+        .new_address(new_address),
+		.limit_switch(limit_switch),
+		.beam_break(beam_break)
+		); 
 	
 	// Instruction Memory (ROM)
 	ROM #(.MEMFILE({"C:/Users/taf27/Documents/350-Project/assembler/stepper.mem"}))
@@ -176,7 +191,9 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 		reset = 1;
 		#1
 		reset = 0;
-        SW = 16'd0;
+        analog_input = 8'd0;
+        limit_switch = 1'b0;
+        beam_break = 1'b0;
 		// Run for the number of cycles specified 
 		for (cycles = 0; cycles < num_cycles; cycles = cycles + 1) begin
 			
@@ -186,11 +203,12 @@ module Wrapper_tb #(parameter FILE = "C:/Users/taf27/Documents/350-Project/assem
 				$fdisplay(actFile, "Cycle %3d: Wrote %0d into register %0d", cycles, rData, rd);
 			end
 			
-			if (cycles >= 50 && cycles <= 70)begin
-			     SW = 16'd4;
-			end else begin
-			     SW = 16'd0;
+			if(cycles >=1500 && cycles <=1510)begin
+			 limit_switch = 1'b1;
+			end  else begin
+			 limit_switch = 1'b0;
 			end
+			
 		end
 
 		$fdisplay(actFile, "============== Testing Mode ==============");

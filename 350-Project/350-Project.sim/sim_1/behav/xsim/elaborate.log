@@ -4,6 +4,8 @@ Running: C:/Xilinx/Vivado/2021.1/bin/unwrapped/win64.o/xelab.exe -wto 8b1e28a8a2
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 3 for port 'in' [C:/Users/taf27/Documents/350-Project/adc_phototransistor.v:64]
+WARNING: [VRFC 10-5021] port 'SW' is not connected on this instance [C:/Users/taf27/Documents/350-Project/Wrapper_tb.v:94]
 WARNING: [VRFC 10-5021] port 'started' is not connected on this instance [C:/Users/taf27/Documents/350-Project/multdiv.v:45]
 WARNING: [VRFC 10-3705] select index 4 into 'carries' is out of bounds [C:/Users/taf27/Documents/350-Project/utilities/CLA_16.v:13]
 Completed static elaboration
@@ -132,7 +134,8 @@ Compiling module xil_defaultlib.multdiv
 Compiling module xil_defaultlib.pw_latch_default
 Compiling module xil_defaultlib.mw_latch_default
 Compiling module xil_defaultlib.Stepper
-Compiling module xil_defaultlib.Phototransistors
+Compiling module xil_defaultlib.decoder3to8
+Compiling module xil_defaultlib.adc_phototransistor_default
 Compiling module xil_defaultlib.IO
 Compiling module xil_defaultlib.processor
 Compiling module xil_defaultlib.ROM(MEMFILE="C:/Users/taf27/Docu...

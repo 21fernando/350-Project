@@ -72,6 +72,7 @@ proc create_report { reportName command } {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param chipscope.maxJobs 3
 set_param xicom.use_bs_reader 1
+set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -132,6 +133,11 @@ read_verilog -library xil_defaultlib {
   C:/Users/taf27/Documents/350-Project/utilities/twos_complement.v
   C:/Users/taf27/Documents/350-Project/latches/xm_latch.v
   C:/Users/taf27/Documents/350-Project/Wrapper.v
+  C:/Users/taf27/Documents/350-Project/utilities/Nand_32.v
+  C:/Users/taf27/Documents/350-Project/Wrapper_tb.v
+  C:/Users/taf27/Documents/350-Project/utilities/And_8.v
+  C:/Users/taf27/Documents/350-Project/utilities/FullAdder.v
+  C:/Users/taf27/Documents/350-Project/utilities/Or_8.v
 }
 OPTRACE "Adding files" END { }
 # Mark all dcp files as not used in implementation to prevent them from being

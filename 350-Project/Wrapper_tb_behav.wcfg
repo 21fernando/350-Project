@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="1,252.414 ns"></ZoomStartTime>
-      <ZoomEndTime time="2,317.932 ns"></ZoomEndTime>
-      <Cursor1Time time="1,430.000 ns"></Cursor1Time>
+      <ZoomStartTime time="1,440.000 ns"></ZoomStartTime>
+      <ZoomEndTime time="3,435.001 ns"></ZoomEndTime>
+      <Cursor1Time time="3,230.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="108"></ValueColumnWidth>
+      <ValueColumnWidth column_width="100"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="38" />
+   <WVObjectSize size="42" />
    <wvobject fp_name="/Wrapper_tb/CPU/io/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -107,6 +107,7 @@
    <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/command" type="array">
       <obj_property name="ElementShortName">command[31:0]</obj_property>
       <obj_property name="ObjectShortName">command[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/target_pos" type="array">
       <obj_property name="ElementShortName">target_pos[20:0]</obj_property>
@@ -120,6 +121,23 @@
    <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/counter_limit" type="array">
       <obj_property name="ElementShortName">counter_limit[21:0]</obj_property>
       <obj_property name="ObjectShortName">counter_limit[21:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/limit_switch" type="logic">
+      <obj_property name="ElementShortName">limit_switch</obj_property>
+      <obj_property name="ObjectShortName">limit_switch</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/state" type="array">
+      <obj_property name="ElementShortName">state[1:0]</obj_property>
+      <obj_property name="ObjectShortName">state[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/reg_24" type="array">
+      <obj_property name="ElementShortName">reg_24[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_24[31:0]</obj_property>
+      <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/Wrapper_tb/CPU/io/reg_25" type="array">
+      <obj_property name="ElementShortName">reg_25[31:0]</obj_property>
+      <obj_property name="ObjectShortName">reg_25[31:0]</obj_property>
    </wvobject>
    <wvobject fp_name="/Wrapper_tb/CPU/io/stepper/toggle_phase_1" type="logic">
       <obj_property name="ElementShortName">toggle_phase_1</obj_property>

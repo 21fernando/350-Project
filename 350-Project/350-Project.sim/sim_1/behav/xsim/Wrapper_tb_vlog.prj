@@ -7,12 +7,13 @@ verilog xil_defaultlib  \
 "../../../../../IO.v" \
 "../../../../../utilities/LeftShift.v" \
 "../../../../../utilities/Or_32.v" \
-"../../../../350-Project.srcs/sources_1/new/Phototransistors.v" \
 "../../../../../RAM.v" \
 "../../../../../ROM.v" \
 "../../../../../utilities/RightShift.v" \
+"../../../../../adc_phototransistor.v" \
 "../../../../../alu.v" \
 "../../../../../utilities/counter_32.v" \
+"../../../../../decoder3to8.v" \
 "../../../../../utilities/decoder_32.v" \
 "../../../../../utilities/dffe_ref.v" \
 "../../../../../utilities/dffe_ref_falling.v" \
@@ -39,7 +40,12 @@ verilog xil_defaultlib  \
 "../../../../../utilities/tristate.v" \
 "../../../../../utilities/twos_complement.v" \
 "../../../../../latches/xm_latch.v" \
+"../../../../../Wrapper.v" \
+"../../../../../utilities/Nand_32.v" \
 "../../../../../Wrapper_tb.v" \
+"../../../../../utilities/And_8.v" \
+"../../../../../utilities/FullAdder.v" \
+"../../../../../utilities/Or_8.v" \
 
 # compile glbl module
 verilog xil_defaultlib "glbl.v"

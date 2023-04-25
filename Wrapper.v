@@ -40,7 +40,8 @@ module Wrapper (
     output [2:0] new_address,
 	input limit_switch,
 	input beam_break,
-	output [9:0] sseg
+	output adc_clock
+	//output [9:0] sseg
     );
     
 	assign clock = CLK100MHZ;
@@ -92,8 +93,8 @@ module Wrapper (
         .new_address(new_address),
 		.limit_switch(limit_switch),
 		.beam_break(beam_break),
-		.sseg(sseg)
-		); 
+		.adc_clock(adc_clock)
+        ); 
 	
 	// Instruction Memory (ROM)
 	// Instruction Memory (ROM)

@@ -19,9 +19,9 @@ module Stepper(
     reg [1:0] state;
     reg [20:0] target_pos;
     always @(negedge CLK100MHZ)begin
-        if(new_data == 1'b1 && !(moving_backward || moving_forward))begin
+        if(new_data == 1'b1)begin
             command <= data_in;
-            state <= data_in [22:21];
+            state <= data_in[22:21];
             target_pos <= data_in[20:0];
         end
     end
@@ -33,47 +33,42 @@ module Stepper(
     reg toggle_phase_1 = 1'b0;
     reg phase_1 = 1'b0;
     reg phase_2 = 1'b0;
-    reg [20:0] current_pos = 22'd0;
+    reg [20:0] current_pos = 22'd30000;
 
     
     always @(posedge CLK100MHZ)begin
-        if (state == 1'b11) begin 
+        if (state == 2'b11) begin 
             current_pos <= 22'd0; 
-            phase_1 <= 1'b0;
-            phase_2 <= 1'b0;
-            counter <= 22'd0;
-            toggle_phase_1 <= 1'b0;
-        end else begin
-            if(counter == counter_limit)begin
-                if(toggle_phase_1)begin
-                    phase_1 <= ~phase_1;
-                end else begin
-                    phase_2 <= ~phase_2;
-                end
-                counter <= 22'd0;
-                toggle_phase_1 <= ~toggle_phase_1;
-                if((moving_backward || moving_forward)) begin
-                    if(moving_forward) begin
-                        current_pos <= current_pos + 1;
-                    end else begin
-                        current_pos <= current_pos - 1;
-                    end
-                end
+        end 
+        if(counter == counter_limit)begin
+            if(toggle_phase_1)begin
+                phase_1 <= ~phase_1;
             end else begin
-                counter <= counter + 1'b1;
+                phase_2 <= ~phase_2;
             end
+            counter <= 22'd0;
+            toggle_phase_1 <= ~toggle_phase_1;
+            if((moving_backward || moving_forward) && state == 2'b00) begin
+                if(moving_forward) begin
+                    current_pos <= current_pos + 1;
+                end else begin
+                    current_pos <= current_pos - 1;
+                end
+            end
+        end else begin
+            counter <= counter + 1'b1;
         end
-    end
+     end
     
     reg moving_forward;
     reg moving_backward;
     always @(posedge CLK100MHZ) begin 
         if(current_pos < target_pos) begin
-            moving_forward <= 1'b1 ^ (current_pos[20] ^ target_pos[20]) ;
-            moving_backward <= 1'b0 ^ (current_pos[20] ^ target_pos[20]);
+            moving_forward <= 1'b1;// ^ (current_pos[20] ^ target_pos[20]) ;
+            moving_backward <= 1'b0;// ^ (current_pos[20] ^ target_pos[20]);
         end else if (current_pos > target_pos) begin
-            moving_forward <= 1'b0 ^ (current_pos[20] ^ target_pos[20]);
-            moving_backward <= 1'b1 ^ (current_pos[20] ^ target_pos[20]);
+            moving_forward <= 1'b0;// ^ (current_pos[20] ^ target_pos[20]);
+            moving_backward <= 1'b1;// ^ (current_pos[20] ^ target_pos[20]);
         end else begin
             moving_forward <= 1'b0;
             moving_backward <= 1'b0;

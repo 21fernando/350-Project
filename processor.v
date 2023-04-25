@@ -53,7 +53,7 @@ module processor(
     move_goalie,
     limit_switch,
 	beam_break,
-	sseg
+	adc_clock
 	
 	);
 
@@ -87,7 +87,7 @@ module processor(
     output move_goalie;
     input limit_switch;
 	input beam_break;
-	output [9:0] sseg;
+	output adc_clock;
     
     //Stall wire
     wire stall, MD_stall, bypassing_stall;
@@ -392,7 +392,7 @@ module processor(
         .move_goalie(move_goalie),
         .limit_switch(limit_switch),
 	    .beam_break(beam_break),
-	    .sseg(sseg)
+	    .adc_clock(adc_clock)
     );
 	assign CPUmemDataIn = q_dmem;//(IOinsn && (address_dmem[13] == 1'b1)) ? IOdataOut : q_dmem;
 

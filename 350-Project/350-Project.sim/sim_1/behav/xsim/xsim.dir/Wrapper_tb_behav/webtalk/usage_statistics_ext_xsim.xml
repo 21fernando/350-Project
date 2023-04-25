@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Sun Apr 23 18:07:57 2023'>
+<webTalkData  fileName='usage_statistics_ext_xsim.xml'  majorVersion='1' minorVersion='0' timeStamp='Mon Apr 24 21:03:46 2023'>
 <section name="__ROOT__" level="0" order="1" description="">
  <section name="software_version_and_target_device" level="1" order="1" description="">
   <keyValuePair key="beta" value="FALSE" description="" />
   <keyValuePair key="build_version" value="3247384" description="" />
-  <keyValuePair key="date_generated" value="Sun Apr 23 18:07:56 2023" description="" />
+  <keyValuePair key="date_generated" value="Mon Apr 24 21:03:45 2023" description="" />
   <keyValuePair key="os_platform" value="WIN64" description="" />
   <keyValuePair key="product_version" value="XSIM v2021.1 (64-bit)" description="" />
   <keyValuePair key="project_id" value="8b1e28a8a2f54380a637620d120baa4d" description="" />
-  <keyValuePair key="project_iteration" value="5" description="" />
-  <keyValuePair key="random_id" value="382f1c2a-9e0b-4115-b21f-b7ddd3336dc3" description="" />
-  <keyValuePair key="registration_id" value="382f1c2a-9e0b-4115-b21f-b7ddd3336dc3" description="" />
+  <keyValuePair key="project_iteration" value="41" description="" />
+  <keyValuePair key="random_id" value="bbe27928-b185-499c-9900-4dfb1dbe81e8" description="" />
+  <keyValuePair key="registration_id" value="bbe27928-b185-499c-9900-4dfb1dbe81e8" description="" />
   <keyValuePair key="route_design" value="FALSE" description="" />
   <keyValuePair key="target_device" value="not_applicable" description="" />
   <keyValuePair key="target_family" value="not_applicable" description="" />
@@ -33,10 +33,10 @@
    <keyValuePair key="command" value="xsim" description="" />
   </section>
   <section name="usage" level="2" order="2" description="">
-   <keyValuePair key="iteration" value="2" description="" />
-   <keyValuePair key="runtime" value="21 us" description="" />
-   <keyValuePair key="simulation_memory" value="17556_KB" description="" />
-   <keyValuePair key="simulation_time" value="2.00_sec" description="" />
+   <keyValuePair key="iteration" value="3" description="" />
+   <keyValuePair key="runtime" value="1 us" description="" />
+   <keyValuePair key="simulation_memory" value="18224_KB" description="" />
+   <keyValuePair key="simulation_time" value="0.22_sec" description="" />
    <keyValuePair key="trace_waveform" value="true" description="" />
   </section>
  </section>
