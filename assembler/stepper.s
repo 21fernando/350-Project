@@ -10,20 +10,20 @@ init:
 	addi $a0, $0, 1
 	jal set_target # set the target to be a large negative number
 	jal set_stepper_state_00  # set the stepper to operate normally
-	addi $t0, $0, 32 # switch data is on bit 5 so 2^5 = 32
-	wait_for_button:
-	and $t1, $25, $t0 #isolate the 5th bit
-	bne $t1, $t0, wait_for_button
+	# addi $t0, $0, 32 # switch data is on bit 5 so 2^5 = 32
+	# wait_for_button:
+	# and $t1, $25, $t0 #isolate the 5th bit
+	# bne $t1, $t0, wait_for_button
 	# now button has been pressed
-	jal set_stepper_state_11 # stepper is now resetting its position
-	add $a0, $0, $0
-	jal set_target # set target to 0 to make sure stepper doesnt move past limit
-	addi $t0, $0, 5
-	add $t1, $0, $0
-	wait_for_stepper_reset: 
-	addi $t1, $t1, 1
-	bne $t0, $t1, wait_for_stepper_reset # Now the stepper has waited a few clock cycles to allow the 0 value to sette into its system
-	jal set_stepper_state_00 # stepper is operating normally again
+	# jal set_stepper_state_11 # stepper is now resetting its position
+	# add $a0, $0, $0
+	# jal set_target # set target to 0 to make sure stepper doesnt move past limit
+	# addi $t0, $0, 5
+	# add $t1, $0, $0
+	# wait_for_stepper_reset: 
+	# addi $t1, $t1, 1
+	# bne $t0, $t1, wait_for_stepper_reset # Now the stepper has waited a few clock cycles to allow the 0 value to sette into its system
+	# jal set_stepper_state_00 # stepper is operating normally again
 main:
 	wait_for_ball:
 	addi $t0, $0, 1
@@ -65,7 +65,7 @@ main:
 	addi $a0, $0, 100
 	j pos_loaded
 	not_pos_5:
-	addi $t0, $0, 60
+	addi $t0, $0, 6
 	bne $t1, $t0, not_pos_6
 	addi $a0, $0, 120
 	j pos_loaded

@@ -1,7 +1,7 @@
 Copyright 1986-2021 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2021.1 (win64) Build 3247384 Thu Jun 10 19:36:33 MDT 2021
-| Date             : Tue Apr 25 02:45:57 2023
+| Date             : Tue Apr 25 14:00:31 2023
 | Host             : P2-08 running 64-bit major release  (build 9200)
 | Command          : report_power -file Wrapper_power_routed.rpt -pb Wrapper_power_summary_routed.pb -rpx Wrapper_power_routed.rpx
 | Design           : Wrapper
@@ -53,14 +53,14 @@ Table of Contents
 | On-Chip        | Power (W) | Used     | Available | Utilization (%) |
 +----------------+-----------+----------+-----------+-----------------+
 | Clocks         |     0.005 |        3 |       --- |             --- |
-| Slice Logic    |     0.007 |     5484 |       --- |             --- |
-|   LUT as Logic |     0.006 |     2734 |     63400 |            4.31 |
-|   Register     |    <0.001 |     1769 |    126800 |            1.40 |
-|   CARRY4       |    <0.001 |       37 |     15850 |            0.23 |
+| Slice Logic    |     0.007 |     5513 |       --- |             --- |
+|   LUT as Logic |     0.007 |     2739 |     63400 |            4.32 |
+|   Register     |    <0.001 |     1776 |    126800 |            1.40 |
+|   CARRY4       |    <0.001 |       38 |     15850 |            0.24 |
 |   F7/F8 Muxes  |    <0.001 |        1 |     63400 |           <0.01 |
-|   Others       |     0.000 |      654 |       --- |             --- |
+|   Others       |     0.000 |      656 |       --- |             --- |
 |   BUFG         |     0.000 |        1 |        32 |            3.13 |
-| Signals        |     0.007 |     4380 |       --- |             --- |
+| Signals        |     0.008 |     4390 |       --- |             --- |
 | Block RAM      |     0.004 |        4 |       135 |            2.96 |
 | I/O            |     0.005 |       26 |       210 |           12.38 |
 | Static Power   |     0.097 |          |           |                 |
@@ -74,7 +74,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.037 |       0.022 |      0.015 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.038 |       0.023 |      0.015 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.018 |       0.000 |      0.018 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.005 |       0.001 |      0.004 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -144,7 +144,7 @@ Table of Contents
 | Name                       | Power (W) |
 +----------------------------+-----------+
 | Wrapper                    |     0.028 |
-|   CPU                      |     0.013 |
+|   CPU                      |     0.014 |
 |     dx_latch_a             |     0.003 |
 |     fd_latch_a             |     0.002 |
 |       genblk1[31].dff_fd_1 |     0.001 |

@@ -2,8 +2,8 @@
 # Vivado v2021.1 (64-bit)
 # SW Build 3247384 on Thu Jun 10 19:36:33 MDT 2021
 # IP Build 3246043 on Fri Jun 11 00:30:35 MDT 2021
-# Start of session at: Tue Apr 25 02:43:43 2023
-# Process ID: 6744
+# Start of session at: Tue Apr 25 13:58:16 2023
+# Process ID: 12144
 # Current directory: C:/Users/taf27/Documents/350-Project/350-Project/350-Project.runs/synth_1
 # Command line: vivado.exe -log Wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source Wrapper.tcl
 # Log file: C:/Users/taf27/Documents/350-Project/350-Project/350-Project.runs/synth_1/Wrapper.vds
@@ -17,7 +17,7 @@ INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2284
+INFO: [Synth 8-7075] Helper process launched with PID 7044
 WARNING: [Synth 8-992] E_branched_jumped is already implicitly declared earlier [C:/Users/taf27/Documents/350-Project/processor.v:237]
 WARNING: [Synth 8-992] CPUmemDataIn is already implicitly declared earlier [C:/Users/taf27/Documents/350-Project/processor.v:374]
 WARNING: [Synth 8-6901] identifier 'E_branched_jumped' is used before its declaration [C:/Users/taf27/Documents/350-Project/processor.v:128]
@@ -44,12 +44,12 @@ WARNING: [Synth 8-6901] identifier 'MD_input_insn' is used before its declaratio
 WARNING: [Synth 8-6901] identifier 'MD_input_insn' is used before its declaration [C:/Users/taf27/Documents/350-Project/processor.v:273]
 WARNING: [Synth 8-6901] identifier 'W_rd' is used before its declaration [C:/Users/taf27/Documents/350-Project/processor.v:345]
 WARNING: [Synth 8-6901] identifier 'W_write_data' is used before its declaration [C:/Users/taf27/Documents/350-Project/processor.v:346]
-WARNING: [Synth 8-6901] identifier 'moving_backward' is used before its declaration [C:/Users/taf27/Documents/350-Project/stepper.v:51]
-WARNING: [Synth 8-6901] identifier 'moving_forward' is used before its declaration [C:/Users/taf27/Documents/350-Project/stepper.v:51]
-WARNING: [Synth 8-6901] identifier 'moving_forward' is used before its declaration [C:/Users/taf27/Documents/350-Project/stepper.v:52]
+WARNING: [Synth 8-6901] identifier 'moving_backward' is used before its declaration [C:/Users/taf27/Documents/350-Project/stepper.v:48]
+WARNING: [Synth 8-6901] identifier 'moving_forward' is used before its declaration [C:/Users/taf27/Documents/350-Project/stepper.v:48]
+WARNING: [Synth 8-6901] identifier 'moving_forward' is used before its declaration [C:/Users/taf27/Documents/350-Project/stepper.v:49]
 WARNING: [Synth 8-6901] identifier 'reg_to_test' is used before its declaration [C:/Users/taf27/Documents/350-Project/Wrapper_tb.v:65]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1329.102 ; gain = 0.000
+Starting RTL Elaboration : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1329.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'Wrapper' [C:/Users/taf27/Documents/350-Project/Wrapper.v:27]
 INFO: [Synth 8-6157] synthesizing module 'processor' [C:/Users/taf27/Documents/350-Project/processor.v:20]
@@ -141,18 +141,18 @@ INFO: [Synth 8-6157] synthesizing module 'RAM' [C:/Users/taf27/Documents/350-Pro
 INFO: [Synth 8-6155] done synthesizing module 'RAM' (40#1) [C:/Users/taf27/Documents/350-Project/RAM.v:2]
 INFO: [Synth 8-6155] done synthesizing module 'Wrapper' (41#1) [C:/Users/taf27/Documents/350-Project/Wrapper.v:27]
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.102 ; gain = 0.000
+Finished RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.102 ; gain = 0.000
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.102 ; gain = 0.000
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1329.254 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.208 . Memory (MB): peak = 1329.102 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.210 . Memory (MB): peak = 1329.254 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -163,29 +163,29 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/Wrapper_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1427.559 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1426.172 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1427.559 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.023 . Memory (MB): peak = 1426.172 ; gain = 0.000
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1427.559 ; gain = 98.457
+Finished Constraint Validation : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1426.172 ; gain = 96.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1427.559 ; gain = 98.457
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1426.172 ; gain = 96.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1427.559 ; gain = 98.457
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:11 ; elapsed = 00:00:11 . Memory (MB): peak = 1426.172 ; gain = 96.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1427.559 ; gain = 98.457
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:12 ; elapsed = 00:00:12 . Memory (MB): peak = 1426.172 ; gain = 96.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -194,7 +194,6 @@ Detailed RTL Component Info :
 +---Adders : 
 	   2 Input   33 Bit       Adders := 1     
 	   2 Input   22 Bit       Adders := 1     
-	   2 Input   21 Bit       Adders := 1     
 	   2 Input   17 Bit       Adders := 1     
 	   2 Input    3 Bit       Adders := 1     
 +---XORs : 
@@ -205,10 +204,10 @@ Detailed RTL Component Info :
 	               32 Bit    Registers := 1     
 	               30 Bit    Registers := 1     
 	               22 Bit    Registers := 1     
-	               21 Bit    Registers := 2     
+	               21 Bit    Registers := 1     
 	               17 Bit    Registers := 1     
+	                9 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
-	                2 Bit    Registers := 1     
 	                1 Bit    Registers := 2111  
 +---RAMs : 
 	             128K Bit	(4096 X 32 bit)          RAMs := 1     
@@ -219,7 +218,6 @@ Detailed RTL Component Info :
 	   2 Input   33 Bit        Muxes := 1     
 	   2 Input   32 Bit        Muxes := 131   
 	   2 Input   22 Bit        Muxes := 1     
-	   2 Input   21 Bit        Muxes := 1     
 	   2 Input   17 Bit        Muxes := 1     
 	   4 Input   17 Bit        Muxes := 1     
 	   2 Input   12 Bit        Muxes := 4     
@@ -228,9 +226,9 @@ Detailed RTL Component Info :
 	   3 Input    5 Bit        Muxes := 2     
 	   2 Input    5 Bit        Muxes := 7     
 	   2 Input    3 Bit        Muxes := 6     
-	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 2     
 	   3 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 337   
+	   2 Input    1 Bit        Muxes := 334   
 	   3 Input    1 Bit        Muxes := 3     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -249,7 +247,7 @@ Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-5784] Optimized 0 bits of RAM "ProcMem/MemoryArray_reg" due to constant propagation. Old ram width 32 bits, new ram width 32 bits.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:30 . Memory (MB): peak = 1427.559 ; gain = 98.457
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:29 ; elapsed = 00:00:29 . Memory (MB): peak = 1426.172 ; gain = 96.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -269,111 +267,111 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1427.559 ; gain = 98.457
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:34 ; elapsed = 00:00:34 . Memory (MB): peak = 1426.172 ; gain = 96.918
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:50 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5723/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5724/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5725/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5726/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5727/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5728/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5729/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5730/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5731/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5732/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5733/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5734/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5735/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5736/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5737/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5738/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5739/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5740/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5741/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5742/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5743/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5744/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5745/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5746/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5747/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5748/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5749/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5750/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5751/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5752/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
 CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5753/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
 CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
 CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
 CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5754/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5755/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5756/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5757/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5758/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5759/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5760/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5761/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5762/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5763/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5764/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5765/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5766/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5767/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5768/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5769/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5770/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5771/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5772/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5773/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5774/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5775/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5776/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5777/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5778/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5779/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5780/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5781/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5782/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5783/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 1st driver pin 'i_5784/Z' [C:/Users/taf27/Documents/350-Project/processor.v:127]
 CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Z with 2nd driver pin 'GND' [C:/Users/taf27/Documents/350-Project/processor.v:127]
 CRITICAL WARNING: [Synth 8-6858] multi-driven net Z is connected to at least one constant driver which has been preserved, other driver is ignored [C:/Users/taf27/Documents/350-Project/processor.v:127]
 INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_0 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
@@ -381,7 +379,7 @@ INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_1 (implemen
 INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_2 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance InstMem/dataOut_reg_3 (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:00:51 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -399,37 +397,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished IO Insertion : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:53 ; elapsed = 00:00:53 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -446,43 +444,43 @@ Report Cell Usage:
 |      |Cell     |Count |
 +------+---------+------+
 |1     |BUFG     |     2|
-|2     |CARRY4   |    37|
-|3     |LUT1     |     7|
+|2     |CARRY4   |    38|
+|3     |LUT1     |    25|
 |4     |LUT2     |   328|
-|5     |LUT3     |   157|
-|6     |LUT4     |   491|
+|5     |LUT3     |   159|
+|6     |LUT4     |   493|
 |7     |LUT5     |   430|
-|8     |LUT6     |  1610|
+|8     |LUT6     |  1607|
 |9     |MUXF7    |     1|
 |10    |RAMB36E1 |     4|
 |14    |FDCE     |  1446|
-|15    |FDRE     |   291|
+|15    |FDRE     |   298|
 |16    |FDSE     |    32|
 |17    |IBUF     |    11|
 |18    |OBUF     |    15|
 +------+---------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1907.000 ; gain = 577.746
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 96 critical warnings and 0 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:00:51 . Memory (MB): peak = 1906.398 ; gain = 478.840
-Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1906.398 ; gain = 577.297
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:46 ; elapsed = 00:00:51 . Memory (MB): peak = 1907.000 ; gain = 480.828
+Synthesis Optimization Complete : Time (s): cpu = 00:00:54 ; elapsed = 00:00:54 . Memory (MB): peak = 1907.000 ; gain = 577.746
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.086 . Memory (MB): peak = 1906.398 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 42 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.087 . Memory (MB): peak = 1908.824 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 43 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1907.125 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1912.492 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Synth Design complete, checksum: 2e51af56
+Synth Design complete, checksum: 58c2fac3
 INFO: [Common 17-83] Releasing license: Synthesis
 104 Infos, 34 Warnings, 96 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 1907.125 ; gain = 578.023
+synth_design: Time (s): cpu = 00:00:59 ; elapsed = 00:01:00 . Memory (MB): peak = 1912.492 ; gain = 583.238
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'C:/Users/taf27/Documents/350-Project/350-Project/350-Project.runs/synth_1/Wrapper.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file Wrapper_utilization_synth.rpt -pb Wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Tue Apr 25 02:44:48 2023...
+INFO: [Common 17-206] Exiting Vivado at Tue Apr 25 13:59:21 2023...

@@ -33,13 +33,10 @@ module Stepper(
     reg toggle_phase_1 = 1'b0;
     reg phase_1 = 1'b0;
     reg phase_2 = 1'b0;
-    reg [20:0] current_pos = 22'd30000;
+    reg [20:0] current_pos = 22'd0;
 
     
     always @(posedge CLK100MHZ)begin
-        if (state == 2'b11) begin 
-            current_pos <= 22'd0; 
-        end 
         if(counter == counter_limit)begin
             if(toggle_phase_1)begin
                 phase_1 <= ~phase_1;
@@ -48,7 +45,7 @@ module Stepper(
             end
             counter <= 22'd0;
             toggle_phase_1 <= ~toggle_phase_1;
-            if((moving_backward || moving_forward) && state == 2'b00) begin
+            if((moving_backward || moving_forward)) begin
                 if(moving_forward) begin
                     current_pos <= current_pos + 1;
                 end else begin
@@ -79,8 +76,8 @@ module Stepper(
     assign IN2 = (moving_forward) ? ~phase_1 : ~phase_2;
     assign IN3 = (moving_forward) ? phase_2 : phase_1;
     assign IN4 = (moving_forward) ? ~phase_2 : ~phase_1;
-    assign EN_A = (moving_backward || moving_forward) && (state != 2'b11);
-    assign EN_B = (moving_backward || moving_forward) && (state != 2'b11);
+    assign EN_A = (moving_backward || moving_forward);
+    assign EN_B = (moving_backward || moving_forward);
     
     
    

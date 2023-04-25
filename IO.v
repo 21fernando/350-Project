@@ -55,7 +55,7 @@ module IO(
     
     and and_1 (limit_switch_debounce, debounce[0], debounce[1], debounce[2], debounce[3], debounce[4], debounce[5], debounce[6], debounce[7], debounce[8]);
 
-    assign reg_25 = {26'd0, ~beam_break, ~beam_break, phototransistor_out};
+    assign reg_25 = {27'd0, limit_switch_debounce, min_address[0], min_address[1], min_address[2],  move_goalie};
         
 //    reg [15:0] clock_counter = 16'd0;
 //    reg [15:0] counter_limit = 16'd5000;
