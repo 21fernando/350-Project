@@ -29,7 +29,7 @@ module IO(
     wire [3:0] phototransistor_out;
     assign min_address = phototransistor_out[3:1];
     assign move_goalie = phototransistor_out[0];
-    adc_phototransistor(
+    adc_phototransistor adc(
         .analog_input(analog_input),
         .CLK100MHZ(clk), 
         .clk_out(clk_out), 

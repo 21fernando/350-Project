@@ -85,9 +85,9 @@ module processor(
     output [2:0] new_address; 
     output [2:0] min_address;
     output move_goalie;
-    input limit_switch,
-	input beam_break,
-	output [9:0] sseg
+    input limit_switch;
+	input beam_break;
+	output [9:0] sseg;
     
     //Stall wire
     wire stall, MD_stall, bypassing_stall;

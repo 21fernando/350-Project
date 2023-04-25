@@ -1,9 +1,9 @@
 init: 
 	addi $t0, $0, 30000
 	sll $t0, $t0, 11
-	add $t0, $0, $0
+	add $t1, $0, $0
 	initial_delay:
-	addi $t0, $t0, 1
+	addi $t1, $t1, 1
 	bne $t0, $t1, initial_delay # wait a few second before starting
 	ready:
 	addi $a0, $0, 1000 
@@ -12,6 +12,7 @@ init:
 	jal set_stepper_state_00 # set the stepper to operate normally
 	addi $t0, $0, 32 # switch data is on bit 5 so 2^5 = 32
 	wait_for_button:
+	and $t1, $25, $t0 #isolate the 5th bit
 	bne $25, $t0, wait_for_button
 	# now button has been pressed
 	jal set_stepper_state_11 # stepper is now resetting its position
